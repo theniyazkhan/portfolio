@@ -50,7 +50,7 @@ function getTagColor(tag) {
               <!-- Status + Year row -->
               <div class="flex flex-wrap items-center gap-2 mb-3">
                 <span
-                  class="px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full border"
+                  class="px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider rounded-full border"
                   :class="paper.status === 'Published'
                     ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800/40'
                     : 'bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 border-amber-200 dark:border-amber-800/40'"
@@ -73,12 +73,12 @@ function getTagColor(tag) {
               </p>
 
               <!-- Venue -->
-              <p class="text-sm text-violet-600 dark:text-violet-400 font-medium italic mb-4">
+              <p class="text-sm sm:text-base text-violet-600 dark:text-violet-400 font-medium italic mb-4">
                 {{ paper.venue }}
               </p>
 
               <!-- Abstract -->
-              <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-3 mb-5">
+              <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-3 mb-5">
                 {{ paper.abstract }}
               </p>
 
@@ -87,7 +87,7 @@ function getTagColor(tag) {
                 <span
                   v-for="tag in paper.tags"
                   :key="tag"
-                  class="px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full border transition-all hover:scale-105"
+                  class="px-2.5 py-1 text-xs font-bold uppercase tracking-wider rounded-full border transition-all hover:scale-105"
                   :class="getTagColor(tag)"
                 >
                   {{ tag }}

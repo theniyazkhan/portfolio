@@ -50,19 +50,19 @@ import { workExperience } from '../data/timeline.js'
             >
               <div v-if="index % 2 === 0" class="inline-block text-left md:text-right">
                 <span
-                  class="inline-block px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full border bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800/40 mb-2"
+                  class="inline-block px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider rounded-full border bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800/40 mb-2"
                 >
                   {{ job.period }}
                 </span>
                 <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">{{ job.role }}</h3>
                 <p class="text-sm font-semibold text-violet-600 dark:text-violet-400 mb-2">{{ job.company }}</p>
-                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-3">{{ job.description }}</p>
+                <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed mb-3">{{ job.description }}</p>
                 <!-- Tech tags -->
                 <div class="flex flex-wrap gap-1.5 justify-start md:justify-end">
                   <span
                     v-for="t in job.tech"
                     :key="t"
-                    class="px-2 py-0.5 text-[10px] font-medium rounded-md bg-slate-200/50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300/40 dark:border-slate-700/40"
+                    class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-200/50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300/40 dark:border-slate-700/40"
                   >
                     {{ t }}
                   </span>
@@ -86,19 +86,19 @@ import { workExperience } from '../data/timeline.js'
             >
               <div v-if="index % 2 !== 0">
                 <span
-                  class="inline-block px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full border bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800/40 mb-2"
+                  class="inline-block px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider rounded-full border bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800/40 mb-2"
                 >
                   {{ job.period }}
                 </span>
                 <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">{{ job.role }}</h3>
                 <p class="text-sm font-semibold text-violet-600 dark:text-violet-400 mb-2">{{ job.company }}</p>
-                <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-3">{{ job.description }}</p>
+                <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed mb-3">{{ job.description }}</p>
                 <!-- Tech tags -->
                 <div class="flex flex-wrap gap-1.5">
                   <span
                     v-for="t in job.tech"
                     :key="t"
-                    class="px-2 py-0.5 text-[10px] font-medium rounded-md bg-slate-200/50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300/40 dark:border-slate-700/40"
+                    class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-200/50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300/40 dark:border-slate-700/40"
                   >
                     {{ t }}
                   </span>
@@ -109,19 +109,19 @@ import { workExperience } from '../data/timeline.js'
             <!-- Mobile content (always left-aligned) -->
             <div class="md:hidden pl-10 flex-1">
               <span
-                class="inline-block px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full border bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800/40 mb-2"
+                class="inline-block px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider rounded-full border bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 border-blue-200 dark:border-blue-800/40 mb-2"
               >
                 {{ job.period }}
               </span>
               <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">{{ job.role }}</h3>
               <p class="text-sm font-semibold text-violet-600 dark:text-violet-400 mb-2">{{ job.company }}</p>
-              <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-3">{{ job.description }}</p>
+              <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed mb-3">{{ job.description }}</p>
               <!-- Tech tags -->
               <div class="flex flex-wrap gap-1.5">
                 <span
                   v-for="t in job.tech"
                   :key="t"
-                  class="px-2 py-0.5 text-[10px] font-medium rounded-md bg-slate-200/50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300/40 dark:border-slate-700/40"
+                  class="px-2.5 py-1 text-xs font-semibold rounded-md bg-slate-200/50 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border border-slate-300/40 dark:border-slate-700/40"
                 >
                   {{ t }}
                 </span>

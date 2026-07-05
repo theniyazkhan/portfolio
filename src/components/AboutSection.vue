@@ -113,10 +113,10 @@ const extracurriculars = [
                   <div class="text-xs font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider mb-0.5">
                     {{ ach.title }}
                   </div>
-                  <div class="text-sm font-bold text-slate-800 dark:text-slate-200">
+                  <div class="text-base font-bold text-slate-800 dark:text-slate-200">
                     {{ ach.sub }}
                   </div>
-                  <div class="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                  <div class="text-sm text-slate-500 dark:text-slate-400 mt-1">
                     {{ ach.desc }}
                   </div>
                 </div>
@@ -140,12 +140,12 @@ const extracurriculars = [
                 class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col hover:border-violet-300 dark:hover:border-violet-800 transition-colors"
               >
                 <div class="flex items-center gap-2 mb-1.5">
-                  <span class="px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider rounded-full border bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 border-violet-200 dark:border-violet-800/40">
+                  <span class="px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wider rounded-full border bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 border-violet-200 dark:border-violet-800/40">
                     {{ act.role }}
                   </span>
                 </div>
-                <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200">{{ act.club }}</h4>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">{{ act.desc }}</p>
+                <h4 class="text-base font-bold text-slate-800 dark:text-slate-200">{{ act.club }}</h4>
+                <p class="text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">{{ act.desc }}</p>
               </div>
             </div>
           </div>

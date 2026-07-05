@@ -53,7 +53,7 @@
             </svg>
           </div>
           <h3 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1">Phone Number</h3>
-          <span class="text-sm font-semibold text-slate-800 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 transition-colors">+880 1787-617564</span>
+          <span class="text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-200 hover:text-violet-600 dark:hover:text-violet-400 transition-colors">+880 1787-617564</span>
         </a>
 
         <!-- Email Card -->
@@ -68,7 +68,7 @@
             </svg>
           </div>
           <h3 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1">Email Address</h3>
-          <span class="text-sm font-semibold text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">ahmadkhanniyaz@gmail.com</span>
+          <span class="text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">ahmadkhanniyaz@gmail.com</span>
         </a>
 
         <!-- Location Card -->
@@ -83,7 +83,7 @@
             </svg>
           </div>
           <h3 class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1">Current Location</h3>
-          <span class="text-sm font-semibold text-slate-800 dark:text-slate-200">Sylhet, Bangladesh</span>
+          <span class="text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-200">Sylhet, Bangladesh</span>
         </div>
       </div>
 

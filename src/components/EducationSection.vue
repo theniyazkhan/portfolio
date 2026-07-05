@@ -49,7 +49,7 @@ import { education, certifications } from '../data/timeline.js'
           >
             <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-violet-500 to-indigo-600 opacity-60"></div>
             <span
-              class="inline-block px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider rounded-full border bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 border-violet-200 dark:border-violet-800/40 mb-3"
+              class="inline-block px-2.5 py-0.5 text-xs font-bold uppercase tracking-wider rounded-full border bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400 border-violet-200 dark:border-violet-800/40 mb-3"
             >
               {{ edu.period }}
             </span>
@@ -59,7 +59,7 @@ import { education, certifications } from '../data/timeline.js'
             <p class="text-sm font-semibold text-violet-600 dark:text-violet-400 mb-4">
               {{ edu.institution }}
             </p>
-            <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
+            <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed">
               {{ edu.description }}
             </p>
           </div>
@@ -88,10 +88,10 @@ import { education, certifications } from '../data/timeline.js'
                 </svg>
               </div>
               <div>
-                <h4 class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200 line-clamp-2 leading-snug mb-1">
+                <h4 class="text-sm font-bold text-slate-800 dark:text-slate-200 line-clamp-2 leading-snug mb-1">
                   {{ cert.name }}
                 </h4>
-                <p class="text-[10px] font-bold text-emerald-600 dark:text-emerald-500 uppercase tracking-wide">
+                <p class="text-xs font-bold text-emerald-600 dark:text-emerald-500 uppercase tracking-wide">
                   {{ cert.issuer }}
                 </p>
               </div>

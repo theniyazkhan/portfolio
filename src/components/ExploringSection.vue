@@ -112,7 +112,7 @@ function strokeDashoffset(progress) {
             <div class="flex-1 min-w-0">
               <!-- Category badge -->
               <span
-                class="inline-flex px-2 py-0.5 mb-2 text-[10px] font-bold uppercase tracking-wider rounded-full border"
+                class="inline-flex px-2 py-0.5 mb-2 text-xs font-bold uppercase tracking-wider rounded-full border"
                 :class="getCategoryClass(item.category)"
               >
                 {{ item.category }}
@@ -122,7 +122,7 @@ function strokeDashoffset(progress) {
                 {{ item.name }}
               </h3>
 
-              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2">
+              <p class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2">
                 {{ item.description }}
               </p>
             </div>
