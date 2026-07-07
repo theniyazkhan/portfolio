@@ -3,7 +3,6 @@ import AppNav from './components/AppNav.vue'
 import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
 import ExperienceTimeline from './components/ExperienceTimeline.vue'
-import EducationSection from './components/EducationSection.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 import ResearchSection from './components/ResearchSection.vue'
@@ -19,7 +18,6 @@ const { activeSection, isScrolled, scrollToTop } = useScrollSpy([
   'home',
   'about',
   'experience',
-  'education',
   'skills',
   'projects',
   'research',
@@ -42,7 +40,6 @@ useScrollReveal()
       <HeroSection />
       <AboutSection />
       <ExperienceTimeline />
-      <EducationSection />
       <SkillsSection />
       <ProjectsSection />
       <ResearchSection />

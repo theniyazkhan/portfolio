@@ -3,7 +3,7 @@ import { useDarkMode } from '../composables/useDarkMode.js'
 import { useMobileMenu } from '../composables/useMobileMenu.js'
 import CommandPalette from './CommandPalette.vue'
 
-defineProps({
+const props = defineProps({
   activeSection: {
     type: String,
     default: 'home',
@@ -21,12 +21,17 @@ const navLinks = [
   { href: '#home', label: 'Home', id: 'home' },
   { href: '#about', label: 'About', id: 'about' },
   { href: '#experience', label: 'Experience', id: 'experience' },
-  { href: '#education', label: 'Education', id: 'education' },
   { href: '#skills', label: 'Skills', id: 'skills' },
-  { href: '#projects', label: 'Projects', id: 'projects' },
-  { href: '#research', label: 'Research', id: 'research' },
+  { href: '#projects', label: 'Projects & Research', id: 'projects' },
   { href: '#contact', label: 'Contact', id: 'contact' },
 ]
+
+const isLinkActive = (linkId) => {
+  if (linkId === 'projects') {
+    return props.activeSection === 'projects' || props.activeSection === 'research'
+  }
+  return props.activeSection === linkId
+}
 </script>
 
 <template>
@@ -56,7 +61,7 @@ const navLinks = [
           :href="link.href"
           :class="[
             'relative px-2.5 py-2 text-xs font-semibold rounded-lg transition-all duration-300 whitespace-nowrap',
-            activeSection === link.id
+            isLinkActive(link.id)
               ? 'text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-950/40'
               : 'text-slate-600 dark:text-slate-400 hover:text-violet-600 dark:hover:text-violet-400 hover:bg-slate-100 dark:hover:bg-slate-800/50',
           ]"
@@ -64,7 +69,7 @@ const navLinks = [
           {{ link.label }}
           <!-- Active dot indicator -->
           <span
-            v-if="activeSection === link.id"
+            v-if="isLinkActive(link.id)"
             class="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1 h-1 bg-violet-600 dark:bg-violet-400 rounded-full"
           ></span>
         </a>
@@ -93,17 +98,7 @@ const navLinks = [
           </svg>
         </a>
 
-        <!-- Command palette button -->
-        <button
-          @click="openPalette"
-          class="ml-1.5 p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-violet-650 dark:hover:text-violet-400 active:scale-90 transition-all shrink-0 cursor-pointer"
-          title="Open Command Palette (Ctrl+K)"
-          aria-label="Open Command Palette"
-        >
-          <svg class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
-        </button>
+
 
         <!-- Dark mode toggle -->
         <button
@@ -146,17 +141,7 @@ const navLinks = [
 
       <!-- Mobile controls -->
       <div class="lg:hidden flex items-center space-x-2 z-50">
-        <!-- Command palette button -->
-        <button
-          @click="openPalette"
-          class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 active:scale-90 transition-all"
-          title="Open Command Palette"
-          aria-label="Open Command Palette"
-        >
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-          </svg>
-        </button>
+
 
         <button
           @click="toggleDarkMode"
@@ -253,7 +238,7 @@ const navLinks = [
             @click="closeMobileMenu"
             :class="[
               'text-center py-3 px-4 rounded-xl text-sm font-medium transition-all',
-              activeSection === link.id
+              isLinkActive(link.id)
                 ? 'bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400'
                 : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800',
             ]"
