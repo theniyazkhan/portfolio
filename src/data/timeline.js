@@ -7,7 +7,7 @@ export const workExperience = [
     company: 'IntelliGency Solutions',
     period: 'Oct 2025 - Present',
     description:
-      'Lead the development of client-facing platforms, including a comprehensive doctor\'s appointment website. Drive company growth by designing engaging marketing posters, communicating directly with clients, and creating clear working procedures to optimize team workflows.',
+      'Lead development of client-facing doctor booking platforms, analytics aggregation tags, conversion tracking setups, and standard operating pipelines for tech operations.',
     tech: ['GTM', 'Web Development', 'Visual Design', 'Workflow Optimization'],
   },
   {
@@ -15,7 +15,7 @@ export const workExperience = [
     company: 'Domino’s Pizza Bangladesh',
     period: 'Oct 2024 - Apr 2025',
     description:
-      'Managed daily logistics, resolved customer escalations independently, and coordinated cross-functional team scheduling to optimize operational workflow.',
+      'Supervised local logistics fulfillment, team roster scheduling, and customer escalations resolving in a fast-paced environment.',
     tech: ['Logistics Management', 'Escalation Resolution', 'Workflow Coordination'],
   },
   {
@@ -23,7 +23,7 @@ export const workExperience = [
     company: 'Islamic Online Madrasah (IOM)',
     period: 'Jan 2020 - Jan 2022',
     description:
-      'Joined as a graphics designer then promoted to Senior Visual Designer. Created visually engaging educational content, adhering to brand guidelines and enhancing the online learning experience. Translated concepts into compelling visuals, contributing to increased engagement across social media and promotional materials.',
+      'Created marketing assets, online course graphics, and identity guidelines. Led promotional layout designs that boosted social media impressions and registrations.',
     tech: ['Visual Design', 'Brand Identity', 'Digital Media', 'Team Leadership'],
   },
 ]
@@ -37,7 +37,7 @@ export const education = [
     institution: 'Metropolitan University, Sylhet',
     period: '2023 - 2026',
     description:
-      'Final-year student specializing in core computer science disciplines, full-stack web engineering, and machine learning. Actively participating in programming contests, robotics events, and academic research.',
+      'Focusing on full-stack engineering, databases, and machine learning. Finalist in competitive coding algorithms and active member of robotics societies.',
   },
 ]
 

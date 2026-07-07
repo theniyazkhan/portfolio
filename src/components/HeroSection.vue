@@ -1,4 +1,6 @@
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue'
+
 const stats = [
   { value: '6+', label: 'Projects' },
   { value: '3+', label: 'Years Coding' },
@@ -8,6 +10,50 @@ const stats = [
     isTrophy: true,
   },
 ]
+
+const titles = ['GTM Engineer', 'Full-Stack Developer', 'Researcher', 'Creative Designer']
+const currentTitle = ref('')
+const titleIndex = ref(0)
+const charIndex = ref(0)
+const isDeleting = ref(false)
+let typingTimeout = null
+
+function tick() {
+  const fullTitle = titles[titleIndex.value]
+  
+  if (isDeleting.value) {
+    currentTitle.value = fullTitle.substring(0, charIndex.value - 1)
+    charIndex.value--
+  } else {
+    currentTitle.value = fullTitle.substring(0, charIndex.value + 1)
+    charIndex.value++
+  }
+  
+  let delta = 90 - Math.random() * 40
+  
+  if (isDeleting.value) {
+    delta /= 2 // Delete faster
+  }
+  
+  if (!isDeleting.value && currentTitle.value === fullTitle) {
+    delta = 2000 // Hold at full text
+    isDeleting.value = true
+  } else if (isDeleting.value && currentTitle.value === '') {
+    isDeleting.value = false
+    titleIndex.value = (titleIndex.value + 1) % titles.length
+    delta = 500 // Pause before typing next word
+  }
+  
+  typingTimeout = setTimeout(tick, delta)
+}
+
+onMounted(() => {
+  tick()
+})
+
+onUnmounted(() => {
+  if (typingTimeout) clearTimeout(typingTimeout)
+})
 </script>
 
 <template>
@@ -36,10 +82,13 @@ const stats = [
         <!-- Badge -->
         <div class="fade-in-up delay-100">
           <span
-            class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-xs sm:text-sm font-semibold tracking-wide text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-950/40 border border-violet-200 dark:border-violet-800/40 rounded-full"
+            class="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-xs sm:text-sm font-semibold tracking-wide text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-950/40 border border-violet-200 dark:border-violet-800/40 rounded-full select-none"
           >
-            <span class="w-2 h-2 bg-violet-500 rounded-full animate-pulse"></span>
-            GTM Engineer &bull; Developer &bull; Designer
+            <span class="w-2 h-2 bg-violet-500 rounded-full animate-pulse shrink-0"></span>
+            <span class="inline-flex items-center">
+              Specializing in&nbsp;<span class="text-violet-700 dark:text-violet-300 font-extrabold">{{ currentTitle }}</span>
+              <span class="ml-0.5 border-r-2 border-violet-500 dark:border-violet-400 h-3 animate-pulse"></span>
+            </span>
           </span>
         </div>
 
@@ -57,10 +106,7 @@ const stats = [
         <p
           class="fade-in-up delay-300 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-2xl mx-auto md:mx-0"
         >
-          Currently focused on performance-driven web development. Through deep user
-          research and data analysis, I uncover exactly why website visitors aren't
-          converting — and engineer the technical solutions to turn that traffic into
-          revenue.
+          A GTM engineer and full-stack developer specializing in performance-driven web platforms, data collection pipelines, and published ML/behavioral research.
         </p>
 
         <!-- CTA Buttons -->
@@ -69,16 +115,17 @@ const stats = [
         >
           <a
             href="#projects"
-            class="group px-8 py-3.5 bg-gradient-to-r from-violet-600 to-blue-500 text-white rounded-xl font-semibold hover:from-violet-700 hover:to-blue-600 hover:-translate-y-1 active:scale-95 transition-all shadow-xl shadow-violet-200/60 dark:shadow-violet-900/40 hover:shadow-2xl hover:shadow-violet-300/50 dark:hover:shadow-violet-900/50 flex items-center justify-center gap-2 w-full sm:w-auto"
+            class="group px-8 py-3.5 bg-gradient-to-r from-violet-600 to-blue-500 text-white rounded-xl font-semibold hover:from-violet-700 hover:to-blue-600 hover:-translate-y-1 active:scale-95 transition-all shadow-xl shadow-violet-200/60 dark:shadow-violet-900/40 hover:shadow-2xl hover:shadow-violet-300/50 dark:hover:shadow-violet-900/50 flex items-center justify-center gap-2 w-full sm:w-auto cursor-pointer"
           >
             View My Work
             <svg class="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
             </svg>
           </a>
+
           <a
             href="#skills"
-            class="px-8 py-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white rounded-xl font-semibold hover:border-violet-400 dark:hover:border-violet-500 hover:text-violet-600 dark:hover:text-violet-400 hover:-translate-y-1 active:scale-95 transition-all shadow-sm hover:shadow-md w-full sm:w-auto text-center"
+            class="px-8 py-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white rounded-xl font-semibold hover:border-violet-400 dark:hover:border-violet-500 hover:text-violet-600 dark:hover:text-violet-400 hover:-translate-y-1 active:scale-95 transition-all shadow-sm hover:shadow-md w-full sm:w-auto text-center cursor-pointer"
           >
             Technical Skills
           </a>

@@ -1,6 +1,7 @@
 <script setup>
 import { useDarkMode } from '../composables/useDarkMode.js'
 import { useMobileMenu } from '../composables/useMobileMenu.js'
+import CommandPalette from './CommandPalette.vue'
 
 defineProps({
   activeSection: {
@@ -11,6 +12,10 @@ defineProps({
 
 const { isDark, toggleDarkMode } = useDarkMode()
 const { isMobileMenuOpen, toggleMobileMenu, closeMobileMenu } = useMobileMenu()
+
+const openPalette = () => {
+  window.dispatchEvent(new CustomEvent('open-command-palette'))
+}
 
 const navLinks = [
   { href: '#home', label: 'Home', id: 'home' },
@@ -67,7 +72,7 @@ const navLinks = [
         <!-- Gradient Hire Me button — SVG sparkle icon, no emoji -->
         <a
           href="mailto:ahmadkhanniyaz@gmail.com"
-          class="ml-2 px-4 py-2 bg-gradient-to-r from-violet-600 to-blue-500 text-white text-xs font-bold rounded-full hover:from-violet-700 hover:to-blue-600 hover:-translate-y-0.5 active:scale-95 transition-all shadow-lg shadow-violet-200 dark:shadow-violet-900/40 hover:shadow-xl inline-flex items-center gap-1 shrink-0"
+          class="ml-2 px-4 py-2 bg-gradient-to-r from-violet-600 to-blue-500 text-white text-xs font-bold rounded-full hover:from-violet-700 hover:to-blue-600 hover:-translate-y-0.5 active:scale-95 transition-all shadow-lg shadow-violet-200 dark:shadow-violet-900/40 hover:shadow-xl inline-flex items-center gap-1 shrink-0 cursor-pointer"
         >
           Hire Me
           <!-- Sparkle SVG icon -->
@@ -75,6 +80,30 @@ const navLinks = [
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
           </svg>
         </a>
+
+        <!-- CV Download link -->
+        <a
+          href="/cv.pdf"
+          download
+          class="ml-1.5 px-3.5 py-2 border border-slate-250 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-violet-650 dark:hover:text-violet-400 hover:border-violet-300 dark:hover:border-violet-850 rounded-full text-xs font-bold hover:-translate-y-0.5 active:scale-95 transition-all shadow-sm inline-flex items-center gap-1 shrink-0 cursor-pointer"
+        >
+          CV
+          <svg class="w-3.5 h-3.5 text-violet-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </a>
+
+        <!-- Command palette button -->
+        <button
+          @click="openPalette"
+          class="ml-1.5 p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-violet-650 dark:hover:text-violet-400 active:scale-90 transition-all shrink-0 cursor-pointer"
+          title="Open Command Palette (Ctrl+K)"
+          aria-label="Open Command Palette"
+        >
+          <svg class="w-4.5 h-4.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </button>
 
         <!-- Dark mode toggle -->
         <button
@@ -117,6 +146,18 @@ const navLinks = [
 
       <!-- Mobile controls -->
       <div class="lg:hidden flex items-center space-x-2 z-50">
+        <!-- Command palette button -->
+        <button
+          @click="openPalette"
+          class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 active:scale-90 transition-all"
+          title="Open Command Palette"
+          aria-label="Open Command Palette"
+        >
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </button>
+
         <button
           @click="toggleDarkMode"
           class="p-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 active:scale-90 transition-all"
@@ -222,15 +263,29 @@ const navLinks = [
           <a
             href="mailto:ahmadkhanniyaz@gmail.com"
             @click="closeMobileMenu"
-            class="mt-2 text-center py-3.5 px-4 bg-gradient-to-r from-violet-600 to-blue-500 text-white rounded-xl font-semibold shadow-md hover:from-violet-700 hover:to-blue-600 transition-all inline-flex items-center justify-center gap-2"
+            class="mt-2 text-center py-3.5 px-4 bg-gradient-to-r from-violet-600 to-blue-500 text-white rounded-xl font-semibold shadow-md hover:from-violet-700 hover:to-blue-600 transition-all inline-flex items-center justify-center gap-2 cursor-pointer"
           >
             Hire Me
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
             </svg>
           </a>
+          <a
+            href="/cv.pdf"
+            download
+            @click="closeMobileMenu"
+            class="text-center py-3.5 px-4 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white rounded-xl font-semibold hover:border-violet-500 dark:hover:border-violet-500 transition-all inline-flex items-center justify-center gap-2 cursor-pointer"
+          >
+            Download CV
+            <svg class="w-4 h-4 text-violet-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </a>
         </div>
       </div>
     </Transition>
+
+    <!-- Command Palette component -->
+    <CommandPalette />
   </nav>
 </template>
