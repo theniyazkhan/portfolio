@@ -64,9 +64,10 @@ const extracurriculars = [
   >
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <!-- Layout Container -->
-      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
-        <!-- Left: Who I Am & Bio -->
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+        <!-- Left: Bento Photo & Info Grid -->
         <div class="w-full lg:w-1/2 reveal">
+          <!-- Text Header -->
           <span
             class="inline-flex items-center gap-2 px-3 py-1 mb-4 text-xs font-bold tracking-widest text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-950/40 rounded-full border border-violet-200 dark:border-violet-800/40 uppercase"
           >
@@ -77,19 +78,75 @@ const extracurriculars = [
             Who I Am
           </span>
 
-          <h2
-            class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-5"
-          >
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-5">
             About Me
           </h2>
-          <div
-            class="h-1.5 w-20 bg-gradient-to-r from-violet-600 to-blue-500 rounded-full mb-7"
-          ></div>
-
-          <div class="pl-5 border-l-4 border-violet-350 dark:border-violet-800">
+          <div class="h-1.5 w-20 bg-gradient-to-r from-violet-600 to-blue-500 rounded-full mb-7"></div>
+<!-- 
+          <div class="pl-5 border-l-4 border-violet-350 dark:border-violet-800 mb-8">
             <p class="text-base sm:text-lg text-slate-650 dark:text-slate-400 italic leading-relaxed font-semibold">
               "CSE student and published researcher bridging software development, conversion engineering, and layout design."
             </p>
+          </div> -->
+
+          <!-- Symmetrical 2x2 Bento Photo Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
+            <!-- Location Card -->
+            <div class="rounded-3xl p-5 flex flex-col justify-between relative overflow-hidden bg-slate-900 text-white min-h-[160px] border border-slate-800">
+              <div class="absolute top-0 right-0 w-24 h-24 bg-violet-500/20 blur-2xl rounded-full -mr-8 -mt-8"></div>
+              <div class="relative z-10 flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-violet-400">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span class="text-[8px] font-black uppercase tracking-[0.25em] text-slate-400">Location</span>
+              </div>
+              <div class="relative z-10 mt-auto">
+                <h3 class="text-base font-black uppercase tracking-tight text-white mb-0.5">Sylhet, BD</h3>
+                <p class="text-[9px] font-bold tracking-widest text-slate-400">24.9045° N, 91.8611° E</p>
+              </div>
+            </div>
+
+            <!-- Profile Image Card -->
+            <div class="relative min-h-[160px] rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm group">
+              <img
+                src="/niyaz.jpg"
+                alt="Niyaz Profile"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-4">
+                <span class="text-[8px] font-black uppercase tracking-[0.2em] text-violet-400">Photo</span>
+                <h4 class="text-xs font-black text-white uppercase tracking-wider">Niyaz Ahmad Khan</h4>
+              </div>
+            </div>
+
+            <!-- Workspace Image Card -->
+            <div class="relative h-[160px] rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm group bg-slate-100 dark:bg-slate-950">
+              <img
+                src="/1.jpeg"
+                alt="Competition"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 dark:opacity-70 group-hover:opacity-100"
+                onerror="this.src='https://images.unsplash.com/photo-1587831990711-23ca6441447b?auto=format&fit=crop&q=80&w=600'"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-4">
+                <span class="text-[8px] font-black uppercase tracking-[0.2em] text-blue-400">Glipmps</span>
+                <h4 class="text-xs font-black text-white uppercase tracking-wider">Competition</h4>
+              </div>
+            </div>
+
+            <!-- Event Image Card -->
+            <div class="relative h-[160px] rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm group bg-slate-100 dark:bg-slate-950">
+              <img
+                src="/2.jpeg"
+                alt="MU CSE Fest Achievement"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-85 dark:opacity-75 group-hover:opacity-100"
+                onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800'"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-4">
+                <span class="text-[8px] font-black uppercase tracking-[0.2em] text-amber-400">Key Moments</span>
+                <h4 class="text-xs font-black text-white uppercase tracking-wider">MU CSE FEST Champion</h4>
+              </div>
+            </div>
           </div>
         </div>        <!-- Right: Accordion Drawer Cards (Education, Certifications, Achievements, Extracurriculars) -->
         <div class="w-full lg:w-1/2 space-y-4">

@@ -9,6 +9,7 @@ import ResearchSection from './components/ResearchSection.vue'
 import ExploringSection from './components/ExploringSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import KittenCompanion from './components/KittenCompanion.vue'
+import CursorFollower from './components/CursorFollower.vue'
 
 import { useScrollSpy } from './composables/useScrollSpy.js'
 import { useScrollReveal } from './composables/useScrollReveal.js'
@@ -35,8 +36,7 @@ useScrollReveal()
   >
     <AppNav :active-section="activeSection" />
 
-    <!-- pt-16 offsets the fixed navbar height -->
-    <main class="pt-16">
+    <main>
       <HeroSection />
       <AboutSection />
       <ExperienceTimeline />
@@ -48,6 +48,7 @@ useScrollReveal()
     </main>
 
     <KittenCompanion />
+    <CursorFollower />
 
     <!-- Scroll-to-top button -->
     <Transition

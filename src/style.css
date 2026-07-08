@@ -13,6 +13,10 @@ html {
   scroll-behavior: smooth;
 }
 
+section {
+  scroll-margin-top: 6rem;
+}
+
 /* ========================================
    GRADIENT TEXT UTILITY
    ======================================== */

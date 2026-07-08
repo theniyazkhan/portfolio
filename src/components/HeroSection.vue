@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 const stats = [
   { value: '6+', label: 'Projects' },
@@ -54,6 +54,41 @@ onMounted(() => {
 onUnmounted(() => {
   if (typingTimeout) clearTimeout(typingTimeout)
 })
+
+// Letter-by-letter dropping and scroll-linked animation
+const line1 = 'Hello, from '
+const line2 = 'Niyaz'
+const line1Chars = computed(() => line1.split(''))
+const line2Chars = computed(() => line2.split(''))
+
+const scrollY = ref(0)
+const animationDone = ref(false)
+
+const handleScroll = () => {
+  scrollY.value = window.scrollY
+}
+
+const getScrollBounce = (index) => {
+  if (!animationDone.value) return 0
+  // Apply a smooth sine wave that responds to scroll position
+  // The subtract of sin(-index * 0.3) ensures it starts at 0 offset when scroll is 0
+  const wave = Math.sin((scrollY.value * 0.008) - (index * 0.25)) - Math.sin(-index * 0.25)
+  return wave * 14
+}
+
+onMounted(() => {
+  tick()
+  window.addEventListener('scroll', handleScroll, { passive: true })
+  // Switch to scroll tracking once the initial drop animations have finished
+  setTimeout(() => {
+    animationDone.value = true
+  }, 1800)
+})
+
+onUnmounted(() => {
+  if (typingTimeout) clearTimeout(typingTimeout)
+  window.removeEventListener('scroll', handleScroll)
+})
 </script>
 
 <template>
@@ -94,19 +129,48 @@ onUnmounted(() => {
 
         <!-- Heading -->
         <h1
-          class="fade-in-up delay-200 text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight"
+          class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight"
         >
-          <span class="text-slate-900 dark:text-white">Hello, from</span>
+          <span class="inline">
+            <span
+              v-for="(char, i) in line1Chars"
+              :key="'l1-' + i"
+              class="letter-drop inline-block text-slate-900 dark:text-white"
+              :style="{
+                animationDelay: `${300 + i * 55}ms`,
+                transform: animationDone ? `translateY(${getScrollBounce(i)}px)` : undefined,
+                transition: animationDone ? 'transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1)' : undefined
+              }"
+            >{{ char === ' ' ? '\u00A0' : char }}</span>
+          </span>
           <br class="hidden md:block" />
-          <span class="gradient-text">Niyaz</span
-          ><span class="text-slate-900 dark:text-white">!</span>
+          <span class="inline">
+            <span
+              v-for="(char, j) in line2Chars"
+              :key="'l2-' + j"
+              class="letter-drop inline-block gradient-text"
+              :style="{
+                animationDelay: `${300 + (line1Chars.length + j) * 55}ms`,
+                transform: animationDone ? `translateY(${getScrollBounce(line1Chars.length + j)}px)` : undefined,
+                transition: animationDone ? 'transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1)' : undefined
+              }"
+            >{{ char }}</span>
+            <span
+              class="letter-drop inline-block text-slate-900 dark:text-white"
+              :style="{
+                animationDelay: `${300 + (line1Chars.length + line2Chars.length) * 55}ms`,
+                transform: animationDone ? `translateY(${getScrollBounce(line1Chars.length + line2Chars.length)}px)` : undefined,
+                transition: animationDone ? 'transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1)' : undefined
+              }"
+            >!</span>
+          </span>
         </h1>
 
         <!-- Description -->
         <p
           class="fade-in-up delay-300 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-2xl mx-auto md:mx-0"
         >
-          A GTM engineer and full-stack developer specializing in performance-driven web platforms, data collection pipelines, and published ML/behavioral research.
+          CSE student and published researcher bridging software development, conversion engineering, and layout design.
         </p>
 
         <!-- CTA Buttons -->
@@ -225,4 +289,46 @@ onUnmounted(() => {
 .delay-300 { animation-delay: 360ms; }
 .delay-400 { animation-delay: 500ms; }
 .delay-500 { animation-delay: 650ms; }
+
+@keyframes slideFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-from-top {
+  opacity: 0;
+  animation: slideFromTop 1s cubic-bezier(0.16, 1, 0.3, 1) 220ms forwards;
+}
+
+@keyframes letterDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-45px) scale(0.95);
+    filter: blur(4px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(4px) scale(1.02);
+    filter: blur(0px);
+  }
+  80% {
+    transform: translateY(-2px) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.letter-drop {
+  opacity: 0;
+  animation: letterDrop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
 </style>
