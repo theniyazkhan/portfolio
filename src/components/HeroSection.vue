@@ -1,5 +1,6 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { findBestAnswer } from '../data/faq.js'
 
 const stats = [
   { value: '6+', label: 'Projects' },
@@ -29,31 +30,65 @@ function tick() {
     charIndex.value++
   }
   
-  let delta = 90 - Math.random() * 40
+  let delta = 130 - Math.random() * 40
   
   if (isDeleting.value) {
-    delta /= 2 // Delete faster
+    delta = 65 // Slower, constant deleting speed
   }
   
   if (!isDeleting.value && currentTitle.value === fullTitle) {
-    delta = 2000 // Hold at full text
+    delta = 4500 // Hold at full text longer (4.5s)
     isDeleting.value = true
   } else if (isDeleting.value && currentTitle.value === '') {
     isDeleting.value = false
     titleIndex.value = (titleIndex.value + 1) % titles.length
-    delta = 500 // Pause before typing next word
+    delta = 1000 // Slower pause before next word (1s)
   }
   
   typingTimeout = setTimeout(tick, delta)
 }
 
-onMounted(() => {
-  tick()
-})
+// FAQ Chatting Bar States
+const chatQuery = ref('')
+const fullResponse = ref('')
+const visibleResponse = ref('')
+const isStreaming = ref(false)
+const showResponse = ref(false)
+let streamInterval = null
 
-onUnmounted(() => {
-  if (typingTimeout) clearTimeout(typingTimeout)
-})
+// FAQ Knowledge Base containing Niyaz's data
+function handleChatSubmit() {
+  if (isStreaming.value || !chatQuery.value.trim()) return
+
+  if (streamInterval) clearInterval(streamInterval)
+
+  showResponse.value = true
+  isStreaming.value = true
+  visibleResponse.value = ''
+
+  const responseText = findBestAnswer(chatQuery.value)
+  fullResponse.value = responseText
+
+  let charIdx = 0
+  streamInterval = setInterval(() => {
+    if (charIdx < responseText.length) {
+      visibleResponse.value += responseText.charAt(charIdx)
+      charIdx++
+    } else {
+      clearInterval(streamInterval)
+      isStreaming.value = false
+    }
+  }, 18)
+}
+
+function clearChat() {
+  if (streamInterval) clearInterval(streamInterval)
+  chatQuery.value = ''
+  visibleResponse.value = ''
+  fullResponse.value = ''
+  showResponse.value = false
+  isStreaming.value = false
+}
 
 // Letter-by-letter dropping and scroll-linked animation
 const line1 = 'Hello, from '
@@ -70,8 +105,6 @@ const handleScroll = () => {
 
 const getScrollBounce = (index) => {
   if (!animationDone.value) return 0
-  // Apply a smooth sine wave that responds to scroll position
-  // The subtract of sin(-index * 0.3) ensures it starts at 0 offset when scroll is 0
   const wave = Math.sin((scrollY.value * 0.008) - (index * 0.25)) - Math.sin(-index * 0.25)
   return wave * 14
 }
@@ -79,7 +112,6 @@ const getScrollBounce = (index) => {
 onMounted(() => {
   tick()
   window.addEventListener('scroll', handleScroll, { passive: true })
-  // Switch to scroll tracking once the initial drop animations have finished
   setTimeout(() => {
     animationDone.value = true
   }, 1800)
@@ -87,8 +119,10 @@ onMounted(() => {
 
 onUnmounted(() => {
   if (typingTimeout) clearTimeout(typingTimeout)
+  if (streamInterval) clearInterval(streamInterval)
   window.removeEventListener('scroll', handleScroll)
 })
+
 </script>
 
 <template>
@@ -173,26 +207,63 @@ onUnmounted(() => {
           CSE student and published researcher bridging software development, conversion engineering, and layout design.
         </p>
 
-        <!-- CTA Buttons -->
-        <div
-          class="fade-in-up delay-400 flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-4 w-full"
-        >
-          <a
-            href="#projects"
-            class="group px-8 py-3.5 bg-gradient-to-r from-violet-600 to-blue-500 text-white rounded-xl font-semibold hover:from-violet-700 hover:to-blue-600 hover:-translate-y-1 active:scale-95 transition-all shadow-xl shadow-violet-200/60 dark:shadow-violet-900/40 hover:shadow-2xl hover:shadow-violet-300/50 dark:hover:shadow-violet-900/50 flex items-center justify-center gap-2 w-full sm:w-auto cursor-pointer"
-          >
-            View My Work
-            <svg class="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-            </svg>
-          </a>
+        <!-- FAQ Chatting Bar -->
+        <div class="fade-in-up delay-400 w-full max-w-xl">
+          <form @submit.prevent="handleChatSubmit" class="relative flex items-center bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-800 rounded-2xl p-1.5 shadow-lg shadow-slate-100/50 dark:shadow-slate-950/50 backdrop-blur-md focus-within:border-violet-500/50 dark:focus-within:border-violet-400/50 transition-all">
+            <input
+              v-model="chatQuery"
+              type="text"
+              placeholder="Ask Niyaz (e.g. skills, projects, experience)..."
+              class="flex-1 px-4 py-2 text-sm bg-transparent outline-none border-none text-slate-800 dark:text-slate-200 placeholder-slate-400 dark:placeholder-slate-500 font-medium disabled:opacity-50"
+              :disabled="isStreaming"
+            />
+            <button
+              type="submit"
+              class="px-5 py-2.5 bg-gradient-to-r from-violet-600 to-blue-500 text-white rounded-xl text-xs font-bold hover:from-violet-700 hover:to-blue-600 active:scale-95 transition-all flex items-center justify-center shrink-0 shadow shadow-violet-200/50 dark:shadow-violet-900/50 disabled:opacity-50 cursor-pointer"
+              :disabled="!chatQuery.trim() || isStreaming"
+            >
+              <span>Ask AI</span>
+              <svg class="w-3.5 h-3.5 ml-1.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </button>
+          </form>
 
-          <a
-            href="#skills"
-            class="px-8 py-3.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white rounded-xl font-semibold hover:border-violet-400 dark:hover:border-violet-500 hover:text-violet-600 dark:hover:text-violet-400 hover:-translate-y-1 active:scale-95 transition-all shadow-sm hover:shadow-md w-full sm:w-auto text-center cursor-pointer"
+          <!-- Chat Response Panel -->
+          <Transition
+            enter-active-class="transition duration-300 ease-out"
+            enter-from-class="opacity-0 translate-y-4"
+            enter-to-class="opacity-100 translate-y-0"
+            leave-active-class="transition duration-200 ease-in"
+            leave-from-class="opacity-100 translate-y-0"
+            leave-to-class="opacity-0 translate-y-4"
           >
-            Technical Skills
-          </a>
+            <div
+              v-if="showResponse"
+              class="mt-6 p-5 bg-white/85 dark:bg-slate-900/85 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl shadow-xl backdrop-blur-md text-left transition-all duration-300 relative overflow-hidden"
+            >
+              <!-- Subtle background theme glow in panel -->
+              <div class="absolute -right-16 -top-16 w-32 h-32 bg-violet-500/10 dark:bg-violet-400/5 blur-2xl rounded-full"></div>
+              <div class="relative z-10 flex flex-col gap-2.5">
+                <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800/50 pb-2">
+                  <div class="text-[10px] font-black uppercase tracking-[0.2em] text-violet-600 dark:text-violet-400 flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 bg-violet-500 rounded-full" :class="{ 'animate-ping': isStreaming }"></span>
+                    Niyaz's AI Assistant
+                  </div>
+                  <button
+                    @click="clearChat"
+                    type="button"
+                    class="text-[10px] font-bold text-slate-400 hover:text-slate-650 dark:hover:text-slate-200 transition-colors cursor-pointer"
+                  >
+                    Clear
+                  </button>
+                </div>
+                <p class="text-sm text-slate-750 dark:text-slate-350 leading-relaxed min-h-[40px] whitespace-pre-line font-semibold">
+                  {{ visibleResponse }}<span v-if="isStreaming" class="inline-block w-1.5 h-3.5 bg-violet-500 dark:bg-violet-400 ml-0.5 animate-pulse shrink-0"></span>
+                </p>
+              </div>
+            </div>
+          </Transition>
         </div>
 
         <!-- Stats row -->

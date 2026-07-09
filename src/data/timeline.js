@@ -7,7 +7,7 @@ export const workExperience = [
     company: 'IntelliGency Solutions',
     period: 'Oct 2025 - Present',
     description:
-      'Lead development of client-facing doctor booking platforms, analytics aggregation tags, conversion tracking setups, and standard operating pipelines for tech operations.',
+      'Lead development of client-facing platforms, conversion analytics setups, and standard operating tech pipelines to optimize Go-To-Market strategy and operations.',
     tech: ['GTM', 'Web Development', 'Visual Design', 'Workflow Optimization'],
   },
   {

@@ -10,6 +10,8 @@ import ExploringSection from './components/ExploringSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import KittenCompanion from './components/KittenCompanion.vue'
 import CursorFollower from './components/CursorFollower.vue'
+import FluidBackground from './components/FluidBackground.vue'
+
 
 import { useScrollSpy } from './composables/useScrollSpy.js'
 import { useScrollReveal } from './composables/useScrollReveal.js'
@@ -49,6 +51,7 @@ useScrollReveal()
 
     <KittenCompanion />
     <CursorFollower />
+    <FluidBackground />
 
     <!-- Scroll-to-top button -->
     <Transition
