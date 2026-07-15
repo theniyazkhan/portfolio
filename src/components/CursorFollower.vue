@@ -4,10 +4,14 @@ import { useDarkMode } from '../composables/useDarkMode.js'
 
 const { isDark } = useDarkMode()
 
-const cursorX = ref(-100)
-const cursorY = ref(-100)
+const dotX = ref(-100)
+const dotY = ref(-100)
+const ringX = ref(-100)
+const ringY = ref(-100)
+
 const isVisible = ref(false)
 const isHovering = ref(false)
+const isClicking = ref(false)
 
 let rafId = null
 let targetX = -100
@@ -16,7 +20,15 @@ let targetY = -100
 function onMouseMove(e) {
   targetX = e.clientX
   targetY = e.clientY
-  if (!isVisible.value) isVisible.value = true
+  
+  if (!isVisible.value) {
+    isVisible.value = true
+    // Initialize positions instantly on first move to prevent entering from top-left
+    dotX.value = targetX
+    dotY.value = targetY
+    ringX.value = targetX
+    ringY.value = targetY
+  }
 }
 
 function onMouseLeave() {
@@ -27,10 +39,24 @@ function onMouseEnter() {
   isVisible.value = true
 }
 
+function onMouseDown() {
+  isClicking.value = true
+}
+
+function onMouseUp() {
+  isClicking.value = false
+}
+
 function animate() {
-  // Smooth lerp for fluid follow
-  cursorX.value += (targetX - cursorX.value) * 0.15
-  cursorY.value += (targetY - cursorY.value) * 0.15
+  // Smoothly interpolate positions
+  // Inner dot is snappy
+  dotX.value += (targetX - dotX.value) * 0.3
+  dotY.value += (targetY - dotY.value) * 0.3
+  
+  // Outer ring is fluidly lagging
+  ringX.value += (targetX - ringX.value) * 0.09
+  ringY.value += (targetY - ringY.value) * 0.09
+  
   rafId = requestAnimationFrame(animate)
 }
 
@@ -66,6 +92,8 @@ onMounted(() => {
     document.addEventListener('mousemove', onMouseMove)
     document.addEventListener('mouseleave', onMouseLeave)
     document.addEventListener('mouseenter', onMouseEnter)
+    document.addEventListener('mousedown', onMouseDown)
+    document.addEventListener('mouseup', onMouseUp)
     document.addEventListener('pointerover', onPointerOver)
     document.addEventListener('pointerout', onPointerOut)
     rafId = requestAnimationFrame(animate)
@@ -76,6 +104,8 @@ onUnmounted(() => {
   document.removeEventListener('mousemove', onMouseMove)
   document.removeEventListener('mouseleave', onMouseLeave)
   document.removeEventListener('mouseenter', onMouseEnter)
+  document.removeEventListener('mousedown', onMouseDown)
+  document.removeEventListener('mouseup', onMouseUp)
   document.removeEventListener('pointerover', onPointerOver)
   document.removeEventListener('pointerout', onPointerOut)
   if (rafId) cancelAnimationFrame(rafId)
@@ -84,65 +114,41 @@ onUnmounted(() => {
 
 <template>
   <div v-if="isVisible" class="pointer-events-none select-none">
-    <!-- 1. Ambient Background Spotlight (behind transparent/blurred content) -->
+    <!-- 1. Outer Ring (fades and shrinks on hover, contracts on click) -->
     <div
-      class="fixed inset-0 pointer-events-none z-0 transition-opacity duration-500"
+      class="fixed top-0 left-0 pointer-events-none z-[9998] transition-all duration-300 ease-out"
       :style="{
-        background: `radial-gradient(600px circle at ${cursorX}px ${cursorY}px, ${
-          isDark 
-            ? 'rgba(124, 58, 237, 0.12) 0%, rgba(59, 130, 246, 0.04) 45%, rgba(2, 6, 23, 0) 80%' 
-            : 'rgba(99, 102, 241, 0.05) 0%, rgba(59, 130, 246, 0.02) 45%, rgba(248, 250, 252, 0) 80%'
-        })`,
-      }"
-    ></div>
-
-    <!-- 2. Ambient Foreground Glow overlay (soft glow directly below the cursor) -->
-    <div
-      class="fixed pointer-events-none z-[9998]"
-      :style="{
-        transform: `translate(${cursorX - 150}px, ${cursorY - 150}px)`,
-        width: '300px',
-        height: '300px',
-        background: `radial-gradient(circle, ${
-          isDark 
-            ? 'rgba(124, 58, 237, 0.08) 0%, rgba(59, 130, 246, 0.02) 50%, transparent 80%' 
-            : 'rgba(99, 102, 241, 0.04) 0%, rgba(59, 130, 246, 0.01) 50%, transparent 80%'
-        })`,
-      }"
-    ></div>
-
-    <!-- 3. Outer Ring -->
-    <div
-      class="fixed top-0 left-0 pointer-events-none z-[9999]"
-      :style="{
-        transform: `translate(${cursorX - (isHovering ? 20 : 12)}px, ${cursorY - (isHovering ? 20 : 12)}px)`,
-        width: isHovering ? '40px' : '24px',
-        height: isHovering ? '40px' : '24px',
-        transition: 'width 0.3s cubic-bezier(0.25, 1, 0.5, 1), height 0.3s cubic-bezier(0.25, 1, 0.5, 1)',
+        transform: `translate(${ringX - 16}px, ${ringY - 16}px)`,
+        opacity: isHovering ? 0 : 1,
+        width: '32px',
+        height: '32px'
       }"
     >
       <div
         class="w-full h-full rounded-full border transition-all duration-300"
         :class="[
-          isDark
-            ? (isHovering ? 'border-cyan-400 bg-cyan-400/10 shadow-[0_0_15px_rgba(34,211,238,0.4)]' : 'border-cyan-500/40 shadow-[0_0_8px_rgba(34,211,238,0.15)]')
-            : (isHovering ? 'border-violet-600 bg-violet-600/10 shadow-[0_0_15px_rgba(124,58,237,0.35)]' : 'border-violet-500/40 shadow-[0_0_8px_rgba(124,58,237,0.15)]')
+          isDark ? 'border-cyan-400/40 bg-cyan-400/5' : 'border-violet-600/40 bg-violet-600/5',
+          isClicking ? 'scale-50 opacity-50' : 'scale-100'
         ]"
       ></div>
     </div>
 
-    <!-- 4. Inner Dot -->
+    <!-- 2. Inner Dot / Blending Circle (expands and inverts color on hover, scales on click) -->
     <div
       class="fixed top-0 left-0 pointer-events-none z-[9999]"
       :style="{
-        transform: `translate(${cursorX - 3}px, ${cursorY - 3}px)`,
+        transform: isHovering 
+          ? `translate(${dotX - 24}px, ${dotY - 24}px)` 
+          : `translate(${dotX - 4}px, ${dotY - 4}px)`,
       }"
     >
       <div
-        class="w-1.5 h-1.5 rounded-full transition-transform duration-300"
+        class="rounded-full transition-all duration-300 ease-out"
         :class="[
-          isDark ? 'bg-cyan-400 shadow-[0_0_6px_rgba(34,211,238,0.6)]' : 'bg-violet-600 shadow-[0_0_6px_rgba(124,58,237,0.5)]',
-          isHovering ? 'scale-75' : 'scale-100'
+          isHovering 
+            ? 'w-12 h-12 bg-white mix-blend-difference' 
+            : 'w-2 h-2 ' + (isDark ? 'bg-cyan-400' : 'bg-violet-600'),
+          isClicking ? (isHovering ? 'scale-90' : 'scale-75') : 'scale-100'
         ]"
       ></div>
     </div>

@@ -1,6 +1,14 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, defineAsyncComponent } from 'vue'
 import { education, certifications } from '../data/timeline.js'
+
+const LocationGlobe3D = defineAsyncComponent(() => import('./LocationGlobe3D.vue'))
+
+const isDesktop = ref(false)
+
+onMounted(() => {
+  isDesktop.value = window.matchMedia('(pointer: fine)').matches
+})
 
 const activeCard = ref('education')
 
@@ -93,7 +101,14 @@ const extracurriculars = [
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">
             <!-- Location Card -->
             <div class="rounded-3xl p-5 flex flex-col justify-between relative overflow-hidden bg-slate-900 text-white min-h-[160px] border border-slate-800">
+              <!-- Glow background -->
               <div class="absolute top-0 right-0 w-24 h-24 bg-violet-500/20 blur-2xl rounded-full -mr-8 -mt-8"></div>
+              
+              <!-- 3D Globe -->
+              <div v-if="isDesktop" class="absolute right-[-25px] top-1/2 -translate-y-1/2 w-36 h-36 pointer-events-none opacity-90 z-0">
+                <LocationGlobe3D />
+              </div>
+
               <div class="relative z-10 flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="text-violet-400">
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
