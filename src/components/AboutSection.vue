@@ -86,15 +86,18 @@ const extracurriculars = [
             Who I Am
           </span>
 
-          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-5">
+          <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-2">
             About Niyaz Ahmad Khan
           </h2>
+          <h3 class="text-base sm:text-lg font-bold text-violet-600 dark:text-violet-400 mb-5">
+            Software Engineer &amp; CS Researcher in Sylhet, Bangladesh
+          </h3>
           <div class="h-1.5 w-20 bg-gradient-to-r from-violet-600 to-blue-500 rounded-full mb-7"></div>
 
           <!-- Clean Semantic Entity Block -->
           <div class="pl-5 border-l-4 border-violet-500 dark:border-violet-400 mb-8">
             <p class="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
-              <strong>Niyaz Ahmad Khan</strong> is a software engineer, computer science researcher, full-stack developer, and graphic designer based in <strong>Sylhet, Bangladesh</strong>. He specializes in synthetic data machine learning pipelines, full-stack web applications using Vue.js and Node.js, and visual design.
+              Niyaz Ahmad Khan is a software engineer, computer science researcher, full-stack developer, and graphic designer based in Sylhet, Bangladesh. He specializes in synthetic data machine learning pipelines, full-stack web applications using Vue.js and Node.js, and visual design.
             </p>
           </div>
 
