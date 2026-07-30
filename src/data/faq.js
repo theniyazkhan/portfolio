@@ -29,8 +29,8 @@ function getLevenshteinDistance(a, b) {
  */
 export const faqDatabase = {
   profile: {
-    keywords: ['who', 'about', 'niyaz', 'introduce', 'profile', 'identity', 'creator', 'person', 'background'],
-    answer: "Niyaz Ahmad Khan is a B.Sc. student in Computer Science and Engineering at Metropolitan University, Sylhet, Bangladesh (2023 - 2026).\n\nHe is a GTM & Full-Stack Engineer and a published machine learning researcher. He bridges software development, conversion tracking engineering, and visual design to create polished and performant web products."
+    keywords: ['who', 'about', 'niyaz', 'introduce', 'profile', 'identity', 'creator', 'person', 'background', 'sylhet', 'bangladesh', 'researcher', 'engineer'],
+    answer: "Niyaz Ahmad Khan is a software engineer, computer science researcher, full-stack developer, and graphic designer based in Sylhet, Bangladesh. He specializes in synthetic data machine learning pipelines, full-stack web systems built with Vue.js and Node.js, and visual design."
   },
   gtm: {
     keywords: ['gtm', 'go-to-market', 'marketing', 'conversion', 'analytics', 'strategy', 'launch'],

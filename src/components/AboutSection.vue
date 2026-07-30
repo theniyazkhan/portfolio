@@ -87,15 +87,16 @@ const extracurriculars = [
           </span>
 
           <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-5">
-            About Me
+            About Niyaz Ahmad Khan
           </h2>
           <div class="h-1.5 w-20 bg-gradient-to-r from-violet-600 to-blue-500 rounded-full mb-7"></div>
-<!-- 
-          <div class="pl-5 border-l-4 border-violet-350 dark:border-violet-800 mb-8">
-            <p class="text-base sm:text-lg text-slate-650 dark:text-slate-400 italic leading-relaxed font-semibold">
-              "CSE student and published researcher bridging software development, conversion engineering, and layout design."
+
+          <!-- Clean Semantic Entity Block -->
+          <div class="pl-5 border-l-4 border-violet-500 dark:border-violet-400 mb-8">
+            <p class="text-base sm:text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+              <strong>Niyaz Ahmad Khan</strong> is a software engineer, computer science researcher, full-stack developer, and graphic designer based in <strong>Sylhet, Bangladesh</strong>. He specializes in synthetic data machine learning pipelines, full-stack web applications using Vue.js and Node.js, and visual design.
             </p>
-          </div> -->
+          </div>
 
           <!-- Symmetrical 2x2 Bento Photo Grid -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full">

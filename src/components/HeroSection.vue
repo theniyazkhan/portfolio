@@ -91,8 +91,8 @@ function clearChat() {
 }
 
 // Letter-by-letter dropping and scroll-linked animation
-const line1 = 'Hello, from '
-const line2 = 'Niyaz'
+const line1 = "Hello, I'm "
+const line2 = 'Niyaz Ahmad Khan'
 const line1Chars = computed(() => line1.split(''))
 const line2Chars = computed(() => line2.split(''))
 
@@ -161,9 +161,9 @@ onUnmounted(() => {
           </span>
         </div>
 
-        <!-- Heading -->
+        <!-- Semantic Heading Entity Block (h1, h2, p) -->
         <h1
-          class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight"
+          class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-4 leading-tight"
         >
           <span class="inline">
             <span
@@ -188,7 +188,7 @@ onUnmounted(() => {
                 transform: animationDone ? `translateY(${getScrollBounce(line1Chars.length + j)}px)` : undefined,
                 transition: animationDone ? 'transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1)' : undefined
               }"
-            >{{ char }}</span>
+            >{{ char === ' ' ? '\u00A0' : char }}</span>
             <span
               class="letter-drop inline-block text-slate-900 dark:text-white"
               :style="{
@@ -200,11 +200,18 @@ onUnmounted(() => {
           </span>
         </h1>
 
-        <!-- Description -->
-        <p
-          class="fade-in-up delay-300 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-2xl mx-auto md:mx-0"
+        <!-- Subheading (h2) for Entity Knowledge Graph -->
+        <h2
+          class="fade-in-up delay-200 text-lg sm:text-xl md:text-2xl font-bold text-violet-600 dark:text-violet-400 mb-4"
         >
-          CSE student and published researcher bridging software development, conversion engineering, and layout design.
+          Software Engineer &amp; CS Researcher in Sylhet, Bangladesh
+        </h2>
+
+        <!-- Description (p) Direct 2-sentence Bio -->
+        <p
+          class="fade-in-up delay-300 text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-2xl mx-auto md:mx-0 font-normal"
+        >
+          Niyaz Ahmad Khan is a software engineer, computer science researcher, full-stack developer, and graphic designer based in Sylhet, Bangladesh. He specializes in synthetic data machine learning pipelines, full-stack web applications using Vue.js and Node.js, and visual design.
         </p>
 
         <!-- FAQ Chatting Bar -->
