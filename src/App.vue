@@ -1,4 +1,5 @@
 <script setup>
+import { defineAsyncComponent } from 'vue'
 import AppNav from './components/AppNav.vue'
 import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
@@ -6,9 +7,11 @@ import ExperienceTimeline from './components/ExperienceTimeline.vue'
 import SkillsSection from './components/SkillsSection.vue'
 import ProjectsSection from './components/ProjectsSection.vue'
 import ResearchSection from './components/ResearchSection.vue'
-import ExploringSection from './components/ExploringSection.vue'
 import ContactSection from './components/ContactSection.vue'
-import KittenCompanion from './components/KittenCompanion.vue'
+
+// Below-the-fold async components for mobile performance optimization
+const ExploringSection = defineAsyncComponent(() => import('./components/ExploringSection.vue'))
+const KittenCompanion = defineAsyncComponent(() => import('./components/KittenCompanion.vue'))
 
 
 import { useScrollSpy } from './composables/useScrollSpy.js'
