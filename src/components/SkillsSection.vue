@@ -41,15 +41,16 @@ const activeCategory = () => {
             v-for="cat in skillCategories"
             :key="cat.id"
             @click="setActiveTab(cat.id)"
+            :aria-label="cat.label"
             :class="[
-              'flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer',
+              'flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer',
               activeTab === cat.id
                 ? `${cat.activeBg} text-white shadow-lg scale-[1.02]`
                 : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-white/60 dark:hover:bg-slate-800/60',
             ]"
           >
-            <span v-html="cat.icon"></span>
-            <span class="hidden md:inline">{{ cat.label }}</span>
+            <span v-html="cat.icon" aria-hidden="true" class="shrink-0"></span>
+            <span class="text-[11px] sm:text-sm font-bold">{{ cat.label }}</span>
           </button>
         </div>
       </div>
