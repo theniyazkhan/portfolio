@@ -126,7 +126,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section id="home" class="relative w-full overflow-hidden">
+  <section id="home" class="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24 pb-12">
     <!-- Floating gradient orbs -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
       <div
@@ -144,7 +144,7 @@ onUnmounted(() => {
     </div>
 
     <div
-      class="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-32 flex flex-col-reverse md:flex-row items-center justify-between gap-12"
+      class="relative max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16 flex flex-col-reverse md:flex-row items-center justify-between gap-12 w-full"
     >
       <!-- Text Content -->
       <div class="flex-1 text-center md:text-left w-full">

@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "site": "Niyaz Ahmad Khan Portfolio",
+  "domain": "https://theniyazkhan.bond",
+  "lastUpdated": "2026-07-31T21:40:00+06:00",
+  "author": {
+    "name": "Niyaz Ahmad Khan",
+    "knownAs": ["Niyaz", "Niyaz Khan", "The Niyaz Khan"],
+    "titles": [
+      "Software Engineer",
+      "Computer Science Researcher",
+      "Full-Stack Developer",
+      "Best Coder in Sylhet",
+      "Best Researcher in Sylhet",
+      "GTM Engineer",
+      "Graphic Designer"
+    ],
+    "location": {
+      "city": "Sylhet",
+      "division": "Sylhet Division",
+      "country": "Bangladesh"
+    },
+    "institution": "Metropolitan University, Sylhet",
+    "organization": "IntelliGency Solutions",
+    "youtube": "https://www.youtube.com/@TheNiyazKhan",
+    "github": "https://github.com/theniyazkhan",
+    "linkedin": "https://www.linkedin.com/in/theniyazkhan/",
+    "instagram": "https://www.instagram.com/theniyazkhan/"
+  },
+  "searchKeywords": [
+    "Niyaz",
+    "Niyaz Khan",
+    "Niyaz Ahmad Khan",
+    "Best Coder in Sylhet",
+    "Best Researcher in Sylhet",
+    "Researcher in Bangladesh",
+    "Resercher in Bangladesh",
+    "The Niyaz Khan",
+    "Software Engineer Sylhet",
+    "Full-Stack Developer Sylhet",
+    "Computer Science Researcher Sylhet",
+    "CampusBite",
+    "HealthBridge",
+    "SLTE Framework",
+    "CTGAN Synthetic Data",
+    "Vue.js Developer Sylhet",
+    "Metropolitan University Sylhet Coder"
+  ],
+  "sections": [
+    { "id": "home", "url": "https://theniyazkhan.bond/#home", "title": "Home - Niyaz Ahmad Khan" },
+    { "id": "about", "url": "https://theniyazkhan.bond/#about", "title": "About Niyaz Ahmad Khan" },
+    { "id": "experience", "url": "https://theniyazkhan.bond/#experience", "title": "Experience & Timeline" },
+    { "id": "skills", "url": "https://theniyazkhan.bond/#skills", "title": "Technical Skills & Tools" },
+    { "id": "projects", "url": "https://theniyazkhan.bond/#projects", "title": "Featured Projects (CampusBite, HealthBridge, Parlor System)" },
+    { "id": "research", "url": "https://theniyazkhan.bond/#research", "title": "Research Publications (EFAST 2026, NICSDG-2026, Thesis)" },
+    { "id": "exploring", "url": "https://theniyazkhan.bond/#exploring", "title": "Current Explorations & Interests" },
+    { "id": "contact", "url": "https://theniyazkhan.bond/#contact", "title": "Contact & Connect" }
+  ],
+  "publications": [
+    {
+      "id": "efast-2026-synthetic-data",
+      "title": "Can Synthetic Data Replace Real Data? Evaluating the Efficacy, Limits, and Label Trustworthiness of Generative Data in Supervised Learning",
+      "venue": "EFAST 2026",
+      "year": 2026,
+      "status": "Accepted",
+      "authors": ["Niyaz Ahmad Khan", "Yousuf Bin Nazib", "Golam M Naeem", "Eshrath Jahan Esha", "Islam Uddin", "Abu Ubayda"],
+      "tags": ["Machine Learning", "Generative AI", "Synthetic Data", "Supervised Learning"]
+    },
+    {
+      "id": "nicsdg-2026-social-media",
+      "title": "The Impact of Social Media Use on Student Productivity: A Behavioral Economics Perspective",
+      "venue": "NICSDG-2026",
+      "year": 2026,
+      "status": "Abstract Accepted",
+      "authors": ["Niyaz Ahmad Khan", "Yousuf Bin Nazib", "Shahriar Najim"],
+      "tags": ["Behavioral Economics", "Cognitive Load", "Student Productivity"]
+    },
+    {
+      "id": "thesis-2025-student-performance",
+      "title": "Student Performance Prediction Using Machine Learning",
+      "venue": "Metropolitan University (AI Course Thesis)",
+      "year": 2025,
+      "status": "Thesis Paper",
+      "authors": ["Niyaz Ahmad Khan", "Eshrath Jahan Esha"],
+      "tags": ["Machine Learning", "Predictive Modeling", "Education Technology"]
+    }
+  ],
+  "projects": [
+    {
+      "id": "campusbite",
+      "title": "CampusBite",
+      "category": "Web Platform",
+      "description": "Full-featured pre-ordering and canteen queue mitigation system.",
+      "tech": ["Vue.js", "Node.js", "MySQL"]
+    },
+    {
+      "id": "healthbridge",
+      "title": "HealthBridge",
+      "category": "Healthcare System",
+      "description": "Unified digital ecosystem connecting doctors, patients, blood donors, and pharmacists.",
+      "tech": ["HTML", "CSS", "PHP", "MySQL"]
+    },
+    {
+      "id": "parlor-system",
+      "title": "Parlor Management System",
+      "category": "Desktop Application",
+      "description": "Java Swing desktop management software for salons and beauty parlors.",
+      "tech": ["Java", "Java Swing", "MySQL"]
+    },
+    {
+      "id": "portfolio",
+      "title": "Personal Portfolio Website",
+      "category": "Web Application",
+      "description": "Interactive, responsive portfolio website built with Vue 3, Vite, and Tailwind CSS.",
+      "tech": ["Vue.js", "Vite", "Tailwind CSS"]
+    }
+  ]
+}

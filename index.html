@@ -40,6 +40,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
 
+    <!-- Manifest Links for Search Indexers & AI Crawlers -->
+    <link rel="author" type="text/plain" href="/llms.txt" />
+    <link rel="alternate" type="application/json" href="/site-data.json" />
+
     <!-- Structured Data (JSON-LD Schema for Entity Knowledge Graph & AI Overviews GEO) -->
     <script type="application/ld+json">
     {
@@ -95,6 +99,8 @@
             "Computer Science",
             "Machine Learning",
             "Synthetic Data",
+            "SLTE Framework",
+            "CTGAN Generative AI",
             "Vue.js",
             "Node.js",
             "Full-Stack Development",
@@ -127,6 +133,32 @@
           "publisher": {
             "@id": "https://theniyazkhan.bond/#person"
           }
+        },
+        {
+          "@type": "ResearchProject",
+          "@id": "https://theniyazkhan.bond/#efast-2026-synthetic-data",
+          "name": "Can Synthetic Data Replace Real Data? Evaluating the Efficacy, Limits, and Label Trustworthiness of Generative Data in Supervised Learning",
+          "author": { "@id": "https://theniyazkhan.bond/#person" },
+          "description": "Empirical and theoretical research proposing the Synthetic Label Trustworthiness Estimation (SLTE) framework for tabular generative AI.",
+          "publication": "EFAST 2026"
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://theniyazkhan.bond/#project-campusbite",
+          "name": "CampusBite",
+          "operatingSystem": "Web",
+          "applicationCategory": "BusinessApplication",
+          "author": { "@id": "https://theniyazkhan.bond/#person" },
+          "description": "University canteen pre-ordering platform mitigating queue congestion using Vue.js and Node.js."
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://theniyazkhan.bond/#project-healthbridge",
+          "name": "HealthBridge",
+          "operatingSystem": "Web",
+          "applicationCategory": "HealthApplication",
+          "author": { "@id": "https://theniyazkhan.bond/#person" },
+          "description": "Unified healthcare ecosystem connecting patients, doctors, blood donors, and pharmacists."
         },
         {
           "@type": "FAQPage",
