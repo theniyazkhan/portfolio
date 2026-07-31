@@ -302,6 +302,10 @@ onUnmounted(() => {
           <img
             src="/me.jpg"
             alt="Niyaz Ahmad Khan"
+            width="288"
+            height="288"
+            fetchpriority="high"
+            decoding="async"
             class="relative w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 rounded-full object-cover shadow-2xl hover:scale-105 transition-transform duration-500 z-10"
           />
           <!-- Availability badge -->

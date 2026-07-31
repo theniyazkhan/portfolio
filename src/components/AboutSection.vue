@@ -90,7 +90,7 @@ const extracurriculars = [
             About Niyaz Ahmad Khan
           </h2>
           <h3 class="text-base sm:text-lg font-bold text-violet-600 dark:text-violet-400 mb-5">
-            Software Engineer &amp; CS Researcher in Sylhet, Bangladesh
+            Engineer &amp; Researcher in Sylhet, Bangladesh
           </h3>
           <div class="h-1.5 w-20 bg-gradient-to-r from-violet-600 to-blue-500 rounded-full mb-7"></div>
 

@@ -12,4 +12,22 @@ export default defineConfig({
       },
     }),
   ],
+  build: {
+    chunkSizeWarningLimit: 800,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/three')) {
+            return 'three-vendor'
+          }
+          if (id.includes('node_modules/@tresjs')) {
+            return 'tres-vendor'
+          }
+          if (id.includes('node_modules/vue')) {
+            return 'vue-vendor'
+          }
+        },
+      },
+    },
+  },
 })

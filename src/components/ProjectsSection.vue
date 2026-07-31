@@ -131,6 +131,8 @@ function closeModal() {
             v-if="project.image"
             :src="project.image"
             :alt="project.title"
+            loading="lazy"
+            decoding="async"
             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
           />
           <!-- Gradient color overlay -->
@@ -222,6 +224,8 @@ function closeModal() {
                 v-if="activeProject.image"
                 :src="activeProject.image"
                 :alt="activeProject.title"
+                loading="lazy"
+                decoding="async"
                 class="w-full h-full object-cover"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
