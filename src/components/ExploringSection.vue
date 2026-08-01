@@ -60,9 +60,6 @@ function resetView() {
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
           Currently Exploring
         </h2>
-        <p class="mt-3 text-slate-500 dark:text-slate-500 max-w-lg mx-auto text-sm sm:text-base">
-          Interactive organic learning tree detailing the technologies and computer science fields I am currently studying.
-        </p>
       </div>
 
       <!-- Split Screen Layout -->

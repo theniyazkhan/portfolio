@@ -44,9 +44,6 @@ function getStatusClass(status) {
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
           Research & Papers
         </h2>
-        <p class="mt-3 text-slate-500 dark:text-slate-550 max-w-lg mx-auto text-sm sm:text-base">
-          Academic contributions exploring web performance, frameworks, and digital marketing technologies.
-        </p>
       </div>
 
       <!-- Research cards -->

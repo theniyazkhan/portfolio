@@ -54,12 +54,9 @@ function closeModal() {
       >
         My Work
       </span>
-      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-3">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white">
         Significant Works
       </h2>
-      <p class="text-slate-500 dark:text-slate-400 max-w-md mx-auto text-sm sm:text-base">
-        A collection of academic, professional, and personal projects.
-      </p>
     </div>
 
     <!-- Filter Controls -->

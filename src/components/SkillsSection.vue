@@ -199,9 +199,6 @@ onUnmounted(() => {
         <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
           Technical Expertise
         </h2>
-        <p class="mt-3 text-slate-500 dark:text-slate-400 max-w-md mx-auto text-sm sm:text-base">
-          Seamless infinite auto-sliding tech stack. Select any category tab to jump directly.
-        </p>
       </div>
 
       <!-- Tabbed Category Switcher -->
