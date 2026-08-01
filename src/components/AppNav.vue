@@ -36,7 +36,7 @@ const isLinkActive = (linkId) => {
 
 <template>
   <!-- Desktop Nav (Floating Pill) -->
-  <nav class="hidden lg:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 items-center justify-between gap-6 px-6 py-2.5 w-[92%] max-w-5xl h-14 bg-white/70 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/50 dark:border-white/5 rounded-full shadow-2xl text-slate-800 dark:text-white slide-down">
+  <nav class="hidden lg:flex fixed top-6 left-1/2 -translate-x-1/2 z-50 items-center justify-between gap-2 xl:gap-4 px-4 xl:px-6 py-2.5 w-[95%] max-w-6xl h-14 bg-white/70 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/50 dark:border-white/5 rounded-full shadow-2xl text-slate-800 dark:text-white slide-down">
     <!-- Brand Logo -->
     <a
       href="#home"
@@ -46,13 +46,13 @@ const isLinkActive = (linkId) => {
     </a>
 
     <!-- Center Nav Links -->
-    <div class="flex items-center gap-1 bg-slate-100/40 dark:bg-white/5 p-1 rounded-full border border-slate-200/10 dark:border-white/5">
+    <div class="flex items-center gap-0.5 xl:gap-1 bg-slate-100/40 dark:bg-white/5 p-1 rounded-full border border-slate-200/10 dark:border-white/5 min-w-0 shrink">
       <a
         v-for="link in navLinks"
         :key="link.id"
         :href="link.href"
         :class="[
-          'px-4 py-2 text-[10px] font-black uppercase tracking-[0.25em] rounded-full transition-all duration-300 whitespace-nowrap',
+          'px-2.5 xl:px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.15em] xl:tracking-[0.22em] rounded-full transition-all duration-300 whitespace-nowrap',
           isLinkActive(link.id)
             ? 'bg-white dark:bg-white/10 text-violet-650 dark:text-white shadow-sm'
             : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200',
@@ -63,11 +63,11 @@ const isLinkActive = (linkId) => {
     </div>
 
     <!-- Right Actions -->
-    <div class="flex items-center gap-2.5 shrink-0">
+    <div class="flex items-center gap-1.5 xl:gap-2.5 shrink-0">
       <!-- Hire Me Button -->
       <a
         href="mailto:ahmadkhanniyaz@gmail.com"
-        class="px-4 py-2 bg-gradient-to-r from-violet-600 to-blue-500 text-white text-[9px] font-black uppercase tracking-[0.2em] rounded-full hover:from-violet-700 hover:to-blue-600 hover:-translate-y-0.5 active:scale-95 transition-all shadow-md shadow-violet-200 dark:shadow-violet-900/40 inline-flex items-center gap-1 shrink-0 cursor-pointer"
+        class="px-3 xl:px-4 py-1.5 bg-gradient-to-r from-violet-600 to-blue-500 text-white text-[9px] font-black uppercase tracking-[0.18em] rounded-full hover:from-violet-700 hover:to-blue-600 hover:-translate-y-0.5 active:scale-95 transition-all shadow-md shadow-violet-200 dark:shadow-violet-900/40 inline-flex items-center gap-1 shrink-0 cursor-pointer"
       >
         Hire Me
         <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
@@ -79,7 +79,7 @@ const isLinkActive = (linkId) => {
       <a
         href="/cv.pdf"
         download
-        class="px-3.5 py-2 border border-slate-250 dark:border-slate-800 text-slate-700 dark:text-slate-350 hover:text-violet-650 dark:hover:text-violet-400 hover:border-violet-300 dark:hover:border-violet-700 rounded-full text-[9px] font-black uppercase tracking-[0.2em] hover:-translate-y-0.5 active:scale-95 transition-all inline-flex items-center gap-1 shrink-0 cursor-pointer"
+        class="px-2.5 xl:px-3.5 py-1.5 border border-slate-250 dark:border-slate-800 text-slate-700 dark:text-slate-350 hover:text-violet-650 dark:hover:text-violet-400 hover:border-violet-300 dark:hover:border-violet-700 rounded-full text-[9px] font-black uppercase tracking-[0.18em] hover:-translate-y-0.5 active:scale-95 transition-all inline-flex items-center gap-1 shrink-0 cursor-pointer"
       >
         CV
         <svg class="w-3 h-3 text-violet-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">

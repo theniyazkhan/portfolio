@@ -11,6 +11,17 @@ import { onMounted, onUnmounted } from 'vue'
  */
 export function useScrollReveal(selector = '.reveal, .reveal-left') {
   let observer = null
+  let mutationObserver = null
+
+  const observeElements = () => {
+    if (!observer) return
+    document.querySelectorAll(selector).forEach((el) => {
+      if (!el.dataset.revealObserved) {
+        el.dataset.revealObserved = 'true'
+        observer.observe(el)
+      }
+    })
+  }
 
   onMounted(() => {
     observer = new IntersectionObserver(
@@ -25,12 +36,18 @@ export function useScrollReveal(selector = '.reveal, .reveal-left') {
       { threshold: 0.12, rootMargin: '0px 0px -60px 0px' }
     )
 
-    document
-      .querySelectorAll(selector)
-      .forEach((el) => observer.observe(el))
+    // Initial scan of static DOM elements
+    observeElements()
+
+    // Watch for async component mounts (e.g. ExploringSection, KittenCompanion)
+    mutationObserver = new MutationObserver(() => {
+      observeElements()
+    })
+    mutationObserver.observe(document.body, { childList: true, subtree: true })
   })
 
   onUnmounted(() => {
     if (observer) observer.disconnect()
+    if (mutationObserver) mutationObserver.disconnect()
   })
 }
