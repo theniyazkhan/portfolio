@@ -277,6 +277,16 @@ function closeModal() {
 
                 <div class="flex gap-3 shrink-0">
                   <a
+                    v-if="activeProject.link && activeProject.link !== '#'"
+                    :href="activeProject.link"
+                    class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 shadow"
+                  >
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                    Try Online / Live Demo
+                  </a>
+                  <a
                     v-if="activeProject.sourceLink"
                     :href="activeProject.sourceLink"
                     target="_blank"

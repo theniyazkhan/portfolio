@@ -5,6 +5,28 @@
  */
 export const projects = [
   {
+    title: 'Sylheti Programming Language & Web Compiler',
+    description:
+      'A custom programming language (.syl) with a unique Sylheti domain vocabulary, Flex scanner, Bison parser, C AST engine, and an interactive web compiler playground.',
+    extendedDescription:
+      'Sylheti is a domain-specific programming language engineered with a distinct Sylheti vocabulary (dhoro, dekha, ne, jodi, naile, ghuro, ghur, hasa, misa, ar, ernay, nabe) and native right-associative exponentiation (^). Features a C AST interpreter engine and a live in-browser compiler playground for visitors to write, run, and experience the language.',
+    category: 'web',
+    tech: ['C', 'Flex', 'Bison', 'JavaScript'],
+    techColor: 'cyan',
+    link: '/Sylheti-Compiler',
+    sourceLink: 'https://github.com/theniyazkhan/syleti_lang',
+    image: '/campusbite.jpg',
+    gradient: 'from-cyan-500 to-indigo-600',
+    features: [
+      'Custom Sylheti syntax parser built with Flex lexical analyzer and Bison LALR parser',
+      'Zero shift/reduce conflict context-free grammar with right-associative power operator (^)',
+      'Recursive Abstract Syntax Tree (AST) engine with symbol table management in C',
+      'Interactive responsive web compiler playground with code editor and live console'
+    ],
+    challenges: 'Resolving dangling-else grammar ambiguity in Bison while maintaining a custom vocabulary and supporting both while and for loop constructs.',
+    solution: 'Engineered non-associative precedence tokens (%nonassoc LOWER_THAN_NAILE / NAILE) and constructed structured AST node representations for loop and conditional statements.'
+  },
+  {
     title: 'CampusBite',
     description:
       'A functional canteen management platform and pre-order system designed to solve the canteen rush problem. Optimized menu handling and order systems for real-time university traffic.',
