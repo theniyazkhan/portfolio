@@ -6,7 +6,7 @@
   <!-- Root Main Page -->
   <url>
     <loc>https://theniyazkhan.bond/</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -14,43 +14,43 @@
   <!-- Navigation Sections -->
   <url>
     <loc>https://theniyazkhan.bond/#about</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://theniyazkhan.bond/#experience</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://theniyazkhan.bond/#skills</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://theniyazkhan.bond/#projects</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://theniyazkhan.bond/#research</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://theniyazkhan.bond/#exploring</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://theniyazkhan.bond/#contact</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -58,39 +58,51 @@
   <!-- Research & Publications -->
   <url>
     <loc>https://theniyazkhan.bond/#efast-2026-synthetic-data</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://theniyazkhan.bond/#nicsdg-2026-social-media</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://theniyazkhan.bond/#thesis-student-performance</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Featured Projects -->
   <url>
+    <loc>https://theniyazkhan.bond/Sylheti-Compiler</loc>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://theniyazkhan.bond/#project-sylheti-compiler</loc>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://theniyazkhan.bond/#project-campusbite</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://theniyazkhan.bond/#project-healthbridge</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://theniyazkhan.bond/#project-parlormanagementsystem</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -98,13 +110,13 @@
   <!-- Search & AI Data Endpoints -->
   <url>
     <loc>https://theniyazkhan.bond/llms.txt</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://theniyazkhan.bond/site-data.json</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -112,13 +124,13 @@
   <!-- Assets & Downloads -->
   <url>
     <loc>https://theniyazkhan.bond/cv.pdf</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://theniyazkhan.bond/me.png</loc>
-    <lastmod>2026-07-31T21:40:00+06:00</lastmod>
+    <lastmod>2026-08-03T00:00:00+06:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
