@@ -39,6 +39,8 @@
     "Software Engineer Sylhet",
     "Full-Stack Developer Sylhet",
     "Computer Science Researcher Sylhet",
+    "Sylheti Programming Language",
+    "Sylheti Compiler",
     "CampusBite",
     "HealthBridge",
     "SLTE Framework",
@@ -86,6 +88,14 @@
     }
   ],
   "projects": [
+    {
+      "id": "sylheti-compiler",
+      "title": "Sylheti Programming Language & Web Compiler",
+      "category": "Web Application & Compiler",
+      "description": "Educational programming language and interactive web compiler tailored for the Sylheti dialect.",
+      "tech": ["JavaScript", "Vue.js", "Compiler Design"],
+      "url": "https://theniyazkhan.bond/Sylheti-Compiler"
+    },
     {
       "id": "campusbite",
       "title": "CampusBite",

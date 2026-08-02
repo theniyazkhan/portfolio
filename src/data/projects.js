@@ -13,9 +13,9 @@ export const projects = [
     category: 'web',
     tech: ['C', 'Flex', 'Bison', 'JavaScript'],
     techColor: 'cyan',
-    link: '/Sylheti-Compiler',
+    link: 'https://theniyazkhan.bond/Sylheti-Compiler',
     sourceLink: 'https://github.com/theniyazkhan/syleti_lang',
-    image: '/campusbite.jpg',
+    image: '/compiler.png',
     gradient: 'from-cyan-500 to-indigo-600',
     features: [
       'Custom Sylheti syntax parser built with Flex lexical analyzer and Bison LALR parser',

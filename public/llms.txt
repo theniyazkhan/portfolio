@@ -27,6 +27,7 @@
 
 ## Software Engineering Projects
 
+- [Sylheti Programming Language & Web Compiler](https://theniyazkhan.bond/Sylheti-Compiler): An educational domain-specific programming language and interactive web compiler created for the Sylheti dialect. Features a client-side lexical analyzer, recursive descent AST parser, runtime interpreter, and web sandbox. Live demo at [https://theniyazkhan.bond/Sylheti-Compiler](https://theniyazkhan.bond/Sylheti-Compiler).
 - [CampusBite (Canteen Pre-Order & Queue Management Platform)](https://github.com/theniyazkhan): Full-stack web platform designed to eliminate university canteen queue congestion through real-time order scheduling, live kitchen dashboards, and automated stock forecasting. Built with Vue.js, Node.js, Express, MySQL, and UptimeRobot API.
 - [HealthBridge (Unified Healthcare & Donor Portal)](https://github.com/theniyazkhan/HealthBridge): Database-centric medical web ecosystem facilitating real-time blood donor geolocation searches, doctor appointment scheduling, and pharmacy stock management with normalized SQL query optimization. Built with HTML, CSS, PHP, and MySQL.
 - [Parlor Management System (Desktop Salon Software)](https://github.com/theniyazkhan/parlourmanagementsysyem): Desktop software featuring a custom dark-themed Swing UI, customer treatment suggestions based on historical data, revenue analytics charts, and offline database synchronization. Built with Java, Java Swing, and MySQL.

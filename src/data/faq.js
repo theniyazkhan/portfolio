@@ -49,8 +49,8 @@ export const faqDatabase = {
     answer: "Niyaz's professional history:\n\n1. GTM (Go-To-Market) Engineer at IntelliGency Solutions (Oct 2025 - Present): Leading development of client-facing platforms, conversion analytics setups, and tech pipelines to optimize product strategy and operations.\n2. GDA at Domino's Pizza Bangladesh (Oct 2024 - Apr 2025): Team scheduling, logistics coordination, and customer resolution.\n3. Senior Visual Designer at IOM (Jan 2020 - Jan 2022): Marketing visual designs, digital assets, and brand layout systems."
   },
   projects: {
-    keywords: ['projects', 'campusbite', 'healthbridge', 'parlor', 'portfolio', 'code', 'repos', 'github'],
-    answer: "Key projects developed by Niyaz:\n\n- CampusBite: A Vue.js/Node.js/MySQL canteen pre-order queue platform helping mitigate peak cafeteria rushes.\n- HealthBridge: A Doctor appointment slots booker, blood donor matching tool, and pharmacy stock tracker (HTML/CSS/PHP/MySQL).\n- Parlor Management System: A desktop customer dashboard in Java Swing featuring dark themed styling.\n- Personal Portfolio: The responsive Vue.js/Vite portfolio website you are currently exploring!"
+    keywords: ['projects', 'sylheti', 'compiler', 'campusbite', 'healthbridge', 'parlor', 'portfolio', 'code', 'repos', 'github'],
+    answer: "Key projects developed by Niyaz:\n\n- Sylheti Programming Language & Web Compiler: An educational programming language & web compiler tailored for Sylheti dialect with custom AST parser (https://theniyazkhan.bond/Sylheti-Compiler).\n- CampusBite: A Vue.js/Node.js/MySQL canteen pre-order queue platform helping mitigate peak cafeteria rushes.\n- HealthBridge: A Doctor appointment slots booker, blood donor matching tool, and pharmacy stock tracker (HTML/CSS/PHP/MySQL).\n- Parlor Management System: A desktop customer dashboard in Java Swing featuring dark themed styling.\n- Personal Portfolio: The responsive Vue.js/Vite portfolio website you are currently exploring!"
   },
   research: {
     keywords: ['research', 'publications', 'papers', 'generative', 'synthetic', 'efast', 'nicsdg', 'thesis', 'study'],
