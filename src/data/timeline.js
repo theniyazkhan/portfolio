@@ -5,7 +5,7 @@ export const workExperience = [
   {
     role: 'GTM Engineer',
     company: 'IntelliGency Solutions',
-    period: 'Oct 2025 - Present',
+    period: 'Oct 2025 - June 2026',
     description:
       'Lead development of client-facing platforms, conversion analytics setups, and standard operating tech pipelines to optimize Go-To-Market strategy and operations.',
     tech: ['GTM', 'Web Development', 'Visual Design', 'Workflow Optimization'],
