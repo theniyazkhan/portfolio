@@ -1,12 +1,3 @@
 {
-  "rewrites": [
-    {
-      "source": "/Sylheti-Compiler",
-      "destination": "/Sylheti-Compiler/index.html"
-    },
-    {
-      "source": "/Sylheti-Compiler/",
-      "destination": "/Sylheti-Compiler/index.html"
-    }
-  ]
+  "trailingSlash": true
 }
