@@ -24,6 +24,7 @@ const categories = [
   {
     id: 'education',
     title: 'Education',
+    shortTitle: 'Education',
     badgeClass: 'bg-violet-100 dark:bg-violet-950/60 text-violet-600 dark:text-violet-400 border-violet-200 dark:border-violet-800/40',
     activeBorder: 'border-violet-500 dark:border-violet-400 bg-violet-50/80 dark:bg-violet-950/50 shadow-md shadow-violet-500/10',
     iconPath: 'M12 14l9-5-9-5-9 5 9 5z M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z',
@@ -31,6 +32,7 @@ const categories = [
   {
     id: 'certifications',
     title: 'Certifications',
+    shortTitle: 'Certifications',
     badgeClass: 'bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 border-emerald-200 dark:border-emerald-800/40',
     activeBorder: 'border-emerald-500 dark:border-emerald-400 bg-emerald-50/80 dark:bg-emerald-950/50 shadow-md shadow-emerald-500/10',
     iconPath: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
@@ -38,6 +40,7 @@ const categories = [
   {
     id: 'achievements',
     title: 'Key Achievements',
+    shortTitle: 'Achievements',
     badgeClass: 'bg-amber-100 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 border-amber-200 dark:border-amber-800/40',
     activeBorder: 'border-amber-500 dark:border-amber-400 bg-amber-50/80 dark:bg-amber-950/50 shadow-md shadow-amber-500/10',
     iconPath: 'M5 3h14M9 3v2a3 3 0 003 3v0a3 3 0 003-3V3M5 3a2 2 0 00-2 2v1a4 4 0 004 4h0M19 3a2 2 0 012 2v1a4 4 0 01-4 4h0M12 8v5m-3 6h6a1 1 0 001-1v-1a3 3 0 00-3-3v0a3 3 0 00-3 3v1a1 1 0 001 1z',
@@ -45,6 +48,7 @@ const categories = [
   {
     id: 'extracurriculars',
     title: 'Extracurriculars',
+    shortTitle: 'Activities',
     badgeClass: 'bg-sky-100 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 border-sky-200 dark:border-sky-800/40',
     activeBorder: 'border-sky-500 dark:border-sky-400 bg-sky-50/80 dark:bg-sky-950/50 shadow-md shadow-sky-500/10',
     iconPath: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z',
@@ -199,14 +203,14 @@ const extracurriculars = [
 
       </div>
 
-      <!-- 4 Simple Logo + Title Type Buttons (No active text badge, no count footer) -->
-      <div class="mt-12 sm:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-8">
+      <!-- 4 Simple Logo + Title Type Buttons (Mobile Responsive Auto-fit & Short Title) -->
+      <div class="mt-12 sm:mt-16 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mb-8">
         <button
           v-for="cat in categories"
           :key="cat.id"
           @click="selectCategory(cat.id)"
           :class="[
-            'p-4 sm:p-5 rounded-2xl border transition-all duration-300 flex items-center gap-3.5 cursor-pointer text-left group select-none',
+            'p-3 sm:p-5 rounded-2xl border transition-all duration-300 flex items-center gap-2.5 sm:gap-3.5 cursor-pointer text-left group select-none min-w-0 overflow-hidden',
             activeTab === cat.id
               ? cat.activeBorder
               : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-slate-350 dark:hover:border-slate-700 hover:-translate-y-0.5 hover:shadow-sm'
@@ -214,16 +218,17 @@ const extracurriculars = [
         >
           <div
             :class="[
-              'w-10 h-10 rounded-xl flex items-center justify-center border shrink-0 transition-transform duration-300 group-hover:scale-105',
+              'w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center border shrink-0 transition-transform duration-300 group-hover:scale-105',
               cat.badgeClass
             ]"
           >
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" :d="cat.iconPath"/>
             </svg>
           </div>
-          <span class="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors leading-tight">
-            {{ cat.title }}
+          <span class="text-xs sm:text-base font-extrabold text-slate-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors leading-tight truncate">
+            <span class="inline sm:hidden">{{ cat.shortTitle }}</span>
+            <span class="hidden sm:inline">{{ cat.title }}</span>
           </span>
         </button>
       </div>
