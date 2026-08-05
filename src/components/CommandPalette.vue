@@ -32,6 +32,8 @@ const items = [
   { id: 'download-cv', title: 'Download CV / Resume', category: 'Contact', icon: '📄', action: () => { const a = document.createElement('a'); a.href = '/cv.pdf'; a.download = 'cv.pdf'; a.click(); close(); } },
   { id: 'visit-github', title: 'Open GitHub Profile', category: 'External Links', icon: '🐙', action: () => window.open('https://github.com/theniyazkhan', '_blank') },
   { id: 'visit-linkedin', title: 'Open LinkedIn Profile', category: 'External Links', icon: '🔗', action: () => window.open('https://www.linkedin.com/in/theniyazkhan/', '_blank') },
+  { id: 'visit-researchgate', title: 'Open ResearchGate Profile', category: 'External Links', icon: '🔬', action: () => window.open('https://www.researchgate.net/profile/Niyaz-Khan-4', '_blank') },
+  { id: 'visit-youtube', title: 'Open YouTube Channel', category: 'External Links', icon: '▶️', action: () => window.open('https://www.youtube.com/@TheNiyazKhan', '_blank') },
 ]
 
 // Filtered commands

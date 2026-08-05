@@ -5,6 +5,7 @@
 ## Core Links & Profiles
 
 - [Official Portfolio Website](https://theniyazkhan.bond/): Main interactive website of Niyaz Ahmad Khan, software engineer and computer science researcher based in Sylhet, Bangladesh.
+- [ResearchGate Profile](https://www.researchgate.net/profile/Niyaz-Khan-4): Academic research publications, citations, preprints, and computer science contributions.
 - [GitHub Profile](https://github.com/theniyazkhan): Open-source repositories, full-stack code, machine learning pipelines, and research implementations.
 - [LinkedIn Profile](https://www.linkedin.com/in/theniyazkhan/): Professional engineering background, career history, and research network.
 - [YouTube Channel (@TheNiyazKhan)](https://www.youtube.com/@TheNiyazKhan): Official YouTube channel featuring software engineering, programming tutorials, and computer science research discussions.

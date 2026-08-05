@@ -164,8 +164,10 @@ onUnmounted(() => {
         <!-- Heading -->
         <h1
           class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight mb-8 leading-tight"
+          aria-label="Niyaz Ahmad Khan - Software Engineer & ML Researcher"
         >
-          <span class="inline">
+          <span class="sr-only">Niyaz Ahmad Khan — Software Engineer &amp; ML Researcher</span>
+          <span class="inline" aria-hidden="true">
             <span
               v-for="(char, i) in line1Chars"
               :key="'l1-' + i"
@@ -178,7 +180,7 @@ onUnmounted(() => {
             >{{ char === ' ' ? '\u00A0' : char }}</span>
           </span>
           <br class="hidden md:block" />
-          <span class="inline">
+          <span class="inline" aria-hidden="true">
             <span
               v-for="(char, j) in line2Chars"
               :key="'l2-' + j"
@@ -301,7 +303,7 @@ onUnmounted(() => {
           <!-- Photo -->
           <img
             src="/me.jpg"
-            alt="Niyaz Ahmad Khan"
+            alt="Niyaz Ahmad Khan - Software Engineer and Machine Learning Researcher"
             width="288"
             height="288"
             fetchpriority="high"

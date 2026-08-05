@@ -120,7 +120,7 @@
         </div>
 
         <!-- Social icons row -->
-        <div class="flex justify-center gap-5">
+        <div class="flex justify-center gap-4 sm:gap-5 flex-wrap">
           <a
             href="https://github.com/theniyazkhan"
             target="_blank"
@@ -147,6 +147,34 @@
               <path
                 fill-rule="evenodd"
                 d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.8h-6.896c.162 1.905 1.503 2.923 3.328 2.923 1.343 0 2.47-.69 2.94-1.614h4.452zm-3.018-4.22c-.173-1.077-1.129-1.921-2.486-1.921-1.352 0-2.378.808-2.583 1.921h5.069zm-10.741 4.22h-9.967v-14h9.118c2.812 0 5.097 1.348 5.097 4.22 0 1.636-.957 2.898-2.316 3.486 1.783.565 2.84 1.933 2.84 3.901 0 3.024-2.531 4.393-4.772 4.393zm-5.553-9.529h4.301c1.393 0 2.215-.71 2.215-1.897 0-1.15-.815-1.776-2.128-1.776h-4.388v3.673zm0 5.759h4.743c1.55 0 2.502-.8 2.502-2.155 0-1.393-.952-2.115-2.508-2.115h-4.737v4.27z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.researchgate.net/profile/Niyaz-Khan-4"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-3.5 rounded-2xl bg-slate-100 dark:bg-slate-850 text-slate-600 dark:text-slate-400 hover:bg-emerald-600 hover:text-white hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-sm border border-slate-200/50 dark:border-slate-800/50"
+            aria-label="ResearchGate"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M19.54 0c-1.05 0-2.1.43-2.9 1.25l-.26.26v-1.1h-3.4v16.14h3.66v-6.32c.62.77 1.6 1.27 2.9 1.27 3.03 0 5.46-2.5 5.46-5.75S22.57 0 19.54 0zm-.37 8.52c-1.4 0-2.53-1.18-2.53-2.65 0-1.47 1.13-2.65 2.53-2.65 1.4 0 2.53 1.18 2.53 2.65 0 1.47-1.13 2.65-2.53 2.65zM1.5 3.5h6.6c2.8 0 4.9 1.7 4.9 4.3 0 1.8-1.05 3.3-2.65 3.9l3.15 4.8h-4.3l-2.6-4.1H4.9v4.1H1.5V3.5zm3.4 3h2.8c1.1 0 1.8.6 1.8 1.5s-.7 1.5-1.8 1.5H4.9V6.5z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.youtube.com/@TheNiyazKhan"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="p-3.5 rounded-2xl bg-slate-100 dark:bg-slate-850 text-slate-600 dark:text-slate-400 hover:bg-rose-600 hover:text-white hover:scale-110 hover:-translate-y-1 transition-all duration-300 shadow-sm border border-slate-200/50 dark:border-slate-800/50"
+            aria-label="YouTube"
+          >
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                fill-rule="evenodd"
+                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
                 clip-rule="evenodd"
               />
             </svg>
