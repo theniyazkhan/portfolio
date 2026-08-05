@@ -35,7 +35,7 @@
         <p
           class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-xl mx-auto leading-relaxed"
         >
-          I'm currently open to new roles in full-stack development, GTM engineering, and research collaborations. Reach out and let's start a conversation!
+          I'm currently open to new roles in full-stack development, GTM engineering, and research collaborations. If need any kind of support in brand growth such as design or developement Reach out and let's start a conversation!
         </p>
       </div>
 
