@@ -37,8 +37,8 @@ export const faqDatabase = {
     answer: "Niyaz is a Go-To-Market (GTM) Engineer specializing in optimizing product launches, marketing operations, conversion tracking, and tech stack configurations. He builds client-facing dashboards, configures analytics tools, and integrates conversion tags to align engineering updates with market success."
   },
   skills: {
-    keywords: ['skills', 'technologies', 'stack', 'languages', 'frameworks', 'tools', 'database', 'libraries', 'coding', 'programming'],
-    answer: "Niyaz's technical stack spans:\n\n- Languages & AI: C/C++, Java, Python, Pandas, NumPy, Scikit-learn\n- Frontend: HTML & CSS, Tailwind CSS, React, Vue.js\n- Backend: Node.js, Express, PHP, MySQL, MongoDB\n- DevOps & Design: Docker, Microsoft Azure, Figma, Photoshop, Illustrator"
+    keywords: ['skills', 'technologies', 'stack', 'languages', 'frameworks', 'tools', 'database', 'libraries', 'coding', 'programming', 'pytorch'],
+    answer: "Niyaz's technical stack spans:\n\n- Languages & AI: C/C++, Java, Python, PyTorch, Pandas, NumPy, Scikit-learn\n- Frontend: HTML & CSS, Tailwind CSS, React, Vue.js\n- Backend: Node.js, Express, PHP, MySQL, MongoDB\n- DevOps & Design: Docker, Microsoft Azure, Figma, Photoshop, Illustrator"
   },
   education: {
     keywords: ['education', 'university', 'degree', 'bsc', 'college', 'academic', 'metropolitan', 'study'],
@@ -61,8 +61,8 @@ export const faqDatabase = {
     answer: "Honors and achievements:\n\n- Champion: MU CSE FEST 2024 Design Category (1st place out of 50+ entries).\n- Finalist: Intra MU Programming Contest 2025.\n- Scholar: Double Board Scholarships from the government for board exam accomplishments."
   },
   certifications: {
-    keywords: ['certifications', 'certificates', 'credential', 'dsa', 'docker', 'azure'],
-    answer: "Niyaz holds certifications including:\n\n- *DSA From Fundamentals to Advanced* (Progsity)\n- *Introduction to Docker for Java* (LinkedIn)\n- *Microsoft Azure Fundamentals* (Microsoft)\n- *Imminent Health Risk* (Jubilant FoodWorks)"
+    keywords: ['certifications', 'certificates', 'credential', 'pytorch', 'deep learning', 'dsa', 'docker', 'azure', 'linkedin'],
+    answer: "Niyaz holds certifications including:\n\n- *PyTorch Essential Training: Deep Learning* (LinkedIn)\n- *DSA From Fundamentals to Advanced* (Progsity)\n- *Introduction to Docker for Java* (LinkedIn)\n- *Microsoft Azure Fundamentals* (Microsoft)\n- *Imminent Health Risk* (Jubilant FoodWorks)"
   },
   contact: {
     keywords: ['contact', 'email', 'hire', 'reach', 'gmail', 'socials', 'linkedin', 'github', 'phone'],

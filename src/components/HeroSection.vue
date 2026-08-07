@@ -310,23 +310,6 @@ onUnmounted(() => {
             decoding="async"
             class="relative w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 rounded-full object-cover shadow-2xl hover:scale-105 transition-transform duration-500 z-10"
           />
-          <!-- Availability badge -->
-          <div
-            class="absolute -bottom-3 -right-3 z-20 bg-white dark:bg-slate-900 rounded-2xl px-3 py-2 shadow-xl border border-slate-100 dark:border-slate-800 flex items-center gap-2"
-          >
-            <span class="relative flex h-2.5 w-2.5">
-              <span
-                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"
-              ></span>
-              <span
-                class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"
-              ></span>
-            </span>
-            <div>
-              <div class="text-xs font-bold text-slate-900 dark:text-white">Available</div>
-              <div class="text-[10px] text-emerald-500 font-medium">for hire</div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

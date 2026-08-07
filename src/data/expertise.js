@@ -24,6 +24,12 @@ export const allSkillsList = [
     logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
   },
   {
+    name: 'PyTorch',
+    brandColor: '#EE4C2C',
+    category: 'languages',
+    logoUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
+  },
+  {
     name: 'JavaScript',
     brandColor: '#F7DF1E',
     category: 'languages',
